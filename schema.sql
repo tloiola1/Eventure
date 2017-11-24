@@ -1,3 +1,4 @@
-DROP DATABASE IF EXISTS social_db;
-
+-- Drops the todolist if it exists currently --
+DROP DATABASE IF EXISTS socail_db;
+-- Creates the "todolist" database --
 CREATE DATABASE social_db;
