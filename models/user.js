@@ -23,13 +23,13 @@ module.exports = function(sequelize, DataTypes) {
     }                          // that would match user option
   });
 
-  users.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-    users.hasMany(models.events, {
-      onDelete: "cascade"
-    });
-  };
+  // users.associate = function(models) {
+  //   // Associating Author with Posts
+  //   // When an Author is deleted, also delete any associated Posts
+  //   users.hasMany(models.events, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
   return users;
 };

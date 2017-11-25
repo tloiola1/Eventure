@@ -22,8 +22,7 @@ module.exports = function(app) {
   // });
 
   // POST route for saving a new Burger
-  app.post("/api/create", function(req, res, callback) {
-    //validation not pass if input is empty
+  app.post("/api/create/user", function(req, res, callback) {
     // console.log(req);
     var name = req.body.name;
     var email = req.body.email;
@@ -39,7 +38,6 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
-  // DELETE route for deleting Burgers. We can get the id of the Burger we want to delete from
   // req.params.id
   app.delete("/api/delete/:id", function(req, res) {
     console.log(req);
@@ -57,7 +55,6 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating Burgers. We can get the updated Burger from req.body
   app.put("/api/update/:id", function(req, res) {
     console.log(req);
 
@@ -72,6 +69,47 @@ module.exports = function(app) {
         res.status(200).end();
       }
     });
+  });
 
+  app.get("/events", function(req, res){
+
+    db.events.findAll({})
+    .then(function(dbEvents){
+      res.render("events", {events: dbEvents});
+    });
+  });
+
+
+  app.get("/api/events/all", function(req, res){
+
+    db.events.findAll({})
+    .then(function(dbEvents){
+      res.json(dbEvents);
+    });
+  });
+
+  app.get("/api/users/all", function(req, res){
+
+    db.users.findAll({})
+    .then(function(dbUsers){
+      res.json(dbUsers);
+    });
+  });
+
+  app.post("/api/create/event", function(req, res){
+    var userId = req.body.userId;
+    var name = req.body.name;
+    var category = req.body.category;
+    var description = req.body.description;
+
+    db.events.create({
+      name,
+      category,
+      description,
+      userId
+    })
+    .then(function(dbEvents){
+      console.log(dbEvents);
+    })
   });
 };
