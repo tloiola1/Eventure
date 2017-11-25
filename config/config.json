@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Alessandro2015",
+    "database": "social_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "yh2zhkn5u0roikuu",
+    "password": "eupy8rjbvkpq9g0n",
+    "database": "l3mpnoy5u4snas4j",
+    "host": "mgs0iaapcj3p9srz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "yh2zhkn5u0roikuu",
+    "password": "eupy8rjbvkpq9g0n",
+    "database": "l3mpnoy5u4snas4j",
+    "host": "mgs0iaapcj3p9srz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}

@@ -1,0 +1,53 @@
+{{!-- <div class="container">
+  <div class="row">
+    <h1 class="col-lg-12 text-center jumbotron"><img class="burger" src="../assets/images/burger.png" alt="burger"> Eat-Da-Burger!<br><small><em>The Sequel... ize</em></small></h1>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <h2 class="text-center">Enjoy Das Burgers!</h2>
+
+      <ol>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger-block}}
+          {{/if}}
+        {{/each}}
+      </ol>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <h2 class="text-center">Devoured Burgers.</h2>
+ 
+      <ol>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block}}
+          {{/unless}}
+        {{/each}}
+      </ol>
+    </div>
+
+    <div class="col-lg-12  text-center"> 
+      <h2>Add Da Burger</h2>
+      <form class="create-form col-lg-12 col-md-12 breadcrumb" action="api/burgers" method="POST">
+
+        <div class="form-group col-lg-5">
+          <label for="bur">Favorite Burger</label>
+          <br>
+          <input type="text" id="burg" name="fav_burger" style="width: inherit">
+        </div>
+        <div class="form-group col-lg-5">
+          <label for="nam">Name for Order</label>
+          <br>
+          <input type="text" id="name" name="client_name" style="width: inherit">
+        </div>
+        <div class="form-group col-lg-2">
+          <label for="tab">Table</label>
+          <br>
+          <input type="number" id="table" name="table_number" style="width: inherit">
+        </div>
+        <div class="col-lg-12">
+          <img class="soda" src="../assets/images/soda.jpg" alt="soda"><button type="submit" class="btn btn-primary">Place Order</button><img class="fries" src="../assets/images/fries.png" alt="fries">
+        </div>
+      </form>
+  </div>
+</div> --}}

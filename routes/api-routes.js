@@ -1,0 +1,115 @@
+// *********************************************************************************
+// api-routes.js - this file offers a set of routes for displaying and saving data to the db
+// *********************************************************************************
+
+// Dependencies
+// =============================================================
+
+// Requiring our Burger model
+var db = require("../models");
+var validator = require("validator");
+// Routes
+// =============================================================
+module.exports = function(app) {
+
+  // GET route for getting all of the Burgers
+  // app.get("/", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    // db.users.findAll({}).then(function(dbUser) {
+      // We have access to the Burgers as an argument inside of the callback function
+      // res.render('frontpage', {users: dbUser});
+    // });
+  // });
+
+  // POST route for saving a new Burger
+  app.post("/api/create/user", function(req, res, callback) {
+    // console.log(req);
+    var name = req.body.name;
+    var email = req.body.email;
+    var password = req.body.password;
+    var category = req.body.category;
+    
+    db.users.create({
+      name,
+      email,
+      password,
+      category      
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+  // req.params.id
+  app.delete("/api/delete/:id", function(req, res) {
+    console.log(req);
+
+    db.users.destroy({
+
+    }).then(function(dbUser){
+      if (result.changedRows == 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      }
+      else {
+        res.status(200).end();
+      }
+    });
+  });
+
+  app.put("/api/update/:id", function(req, res) {
+    console.log(req);
+
+    db.users.update({
+      
+    }).then(function(result){
+      if (result.changedRows == 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      } 
+      else {
+        res.status(200).end();
+      }
+    });
+  });
+
+  app.get("/events", function(req, res){
+
+    db.events.findAll({})
+    .then(function(dbEvents){
+      res.render("events", {events: dbEvents});
+    });
+  });
+
+
+  app.get("/api/events/all", function(req, res){
+
+    db.events.findAll({})
+    .then(function(dbEvents){
+      res.json(dbEvents);
+    });
+  });
+
+  app.get("/api/users/all", function(req, res){
+
+    db.users.findAll({})
+    .then(function(dbUsers){
+      res.json(dbUsers);
+    });
+  });
+
+  app.post("/api/create/event", function(req, res){
+    var userId = req.body.userId;
+    var name = req.body.name;
+    var category = req.body.category;
+    var description = req.body.description;
+
+    db.events.create({
+      name,
+      category,
+      description,
+      userId
+    })
+    .then(function(dbEvents){
+      console.log(dbEvents);
+    })
+  });
+};
