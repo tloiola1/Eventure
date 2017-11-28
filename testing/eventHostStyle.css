@@ -1,0 +1,14 @@
+body{
+    background-image: url("dose-media-424261.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+    text-align: center;
+}
+
+.eventsArea{
+    text-align: center;
+    margin-top: 50px;
+}
+
