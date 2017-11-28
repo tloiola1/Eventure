@@ -1,7 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-// sessionStorage.clear();
 $(function() {
   $(".user-form").on("submit", function(event) {
+    localStorage.clear();
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
@@ -18,10 +18,10 @@ $(function() {
     }).then(
       function(newUser) {
         // console.log("User_Form ***************************************");
-        console.log(newUser);
-        // sessionStorage.setItem("id", newUser.id);
+        // console.log(newUser);
+        localStorage.setItem("id", newUser.id);
         // sessionStorage.setItem("name", newUser.name);
-        // $("#name-display").html(sessionStorage.getItem("name"));
+        // $("#name-display").html(localStorage.getItem("id"));
         location.href = "/events";
     });
   });

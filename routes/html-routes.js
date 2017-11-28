@@ -19,9 +19,9 @@ module.exports = function(app) {
     res.render("host");
   });
 
-  // app.get("/api/events/all", function(req, res) {
-  //   res.render("all");
-  // });
+  app.get("/manage", function(req, res) {
+    res.render("manage");
+  });
   // // blog route loads blog.html
   // app.get("/blog", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/blog.html"));
