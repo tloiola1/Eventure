@@ -1,0 +1,27 @@
+body{
+    background-image: url("alex-jodoin-246078.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    color: ghostwhite;
+}
+
+#buttons{
+    margin-left: 45%;
+}
+
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.modal-footer {
+    background-color: #f9f9f9;
+}

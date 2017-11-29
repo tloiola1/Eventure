@@ -1,0 +1,15 @@
+body{
+    background-image: url("cesar-couto-420986.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+}
+
+.left{
+    text-align: center;
+}
+
+.right{
+    text-align: center;
+}

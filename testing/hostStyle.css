@@ -1,0 +1,29 @@
+body{
+    background-image: url("eric-rothermel-23788.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+}
+
+.inputArea{
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.eventOptions{
+    color: white;
+    text-align: center;
+}
+
+.eventDetails{
+    color: white;
+}
+
+.eventDetails h2{
+    text-align: center;
+}
+
+.hostSubmit{
+    text-align: center;
+}
