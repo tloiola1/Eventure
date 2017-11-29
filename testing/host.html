@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Let's Have Fun!</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="javascript/app.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="hostStyle.css">
+
+</head>
+<body>
+    <row>
+        <div class="containter col-sm-offset-1 col-sm-10 col-sm-offset-1 inputArea">
+            <!--Categories that guests fall into decided here-->
+            <div class="container col-sm-6 eventOptions">
+                <h2>Select your categories:</h2>
+                    <hr>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 1</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 2</label>
+                </div>
+                <div class="checkbox ">
+                    <label><input type="checkbox" value="">Option 3</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 4</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 5</label>
+                </div>
+                <div class="checkbox ">
+                    <label><input type="checkbox" value="">Option 6</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 7</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 8</label>
+                </div>
+                <div class="checkbox ">
+                    <label><input type="checkbox" value="">Option 9</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Option 10</label>
+                </div>
+            </div>
+
+            <!--Event Details-->
+            <div class="container col-sm-6 eventDetails">
+                <h2>Enter in details of your event:</h2>
+                <hr>
+                <div class="form-group">
+                    <label for="usr">Name of Event:</label>
+                    <input type="text" class="form-control" id="usr">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" id="location">
+                </div>
+                <div class="form-group">
+                    <label for="dateTime">Date & Time:</label>
+                    <input type="datetime" class="form-control" id="dateTime">
+                </div>
+                <div class="form-group">
+                    <label for="maxPeople">Maximum Number of Attendees:</label>
+                    <input type="number" class="form-control" id="maxPeople">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Short Description:</label>
+                    <input type="password" class="form-control" id="pwd">
+                </div>
+                <div class="checkbox ">
+                    <label><input type="checkbox" value="">21+ Event</label>
+                </div>
+
+                <form method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="file">Upload a picture for your event!</label>
+                        <input type="file" id="file" name="file" multiple>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </row>
+
+    <!--Submit Button-->
+    <row>
+        <div class="col-sm-12 hostSubmit">
+            <a href="eventsToHost.html" type="button" class="btn btn-success" role="button">See My Events</a>
+        </div>
+    </row>
+
+    <!--Navbar with API links-->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container-fluid">
+            <a href="ADD THE HREF">API</a>
+            <a href="ADD THE HREF">Guest List</a>
+            <a href="ADD THE HREF">IDK SOMETHING ELSE</a>
+        </div>
+    </nav>
+
+</body>
+</html>
