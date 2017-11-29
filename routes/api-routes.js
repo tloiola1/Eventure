@@ -138,10 +138,10 @@ module.exports = function(app) {
     // });
   });
 
-    //  Authenticate
-    app.post("/login",
-        passport.authenticate("local", { successRedirect: "/",
-            failureRedirect: "login",
-            failureFlash: true })
-    );
+    // //  Authenticate
+    // app.post("/login",
+    //     passport.authenticate("local", { successRedirect: "/",
+    //         failureRedirect: "login",
+    //         failureFlash: true })
+    // );
 };

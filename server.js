@@ -1,7 +1,11 @@
 //Dependencies
 var express = require("express");
+var session = require("express-session");
 var bodyParser = require("body-parser");
 var db = require("./models");
+var passport = require("passport");
+//  ENV
+var env = require("dotenv").load();
 
 var PORT = process.env.PORT || 8080;// 
 
@@ -9,7 +13,16 @@ var app = express();
 
 app.use(express.static('public'));
 
+//  For Body Parser
 app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//  For Passport
+app.use(session({ secret: 'social',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
 
 //Set handlebars
 var expHbs = require('express-handlebars');
