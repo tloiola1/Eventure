@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Let's Have Fun!</title>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script src="javascript/app.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="guestStyle.css">
-</head>
-
-<body>
-    <div class="container">
+<div class="container">
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-default btn-lg" id="surveybttn">Survey</button>
         <button type="button" class="btn btn-default btn-lg" id="picturebttn">Picture</button>
@@ -30,7 +8,7 @@
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
-                    <div class="modal-header"">
+                    <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4>Survey</h4>
                     </div>
@@ -245,7 +223,7 @@
         </div>
         <!--This button leads to the events the user should go to, appears ONLY after survey and picture are done-->
         <div>
-            <a href="eventsToAttend.html" type="button" class="btn btn-success" role="button">Continue</a>
+            <a href="/eventsToAttend" type="button" class="btn btn-success" role="button">Continue</a>
         </div>
     </div>
 
@@ -263,5 +241,20 @@
         });
     </script>
 
-</body>
-</html>
+<style type="text/css">
+    body{
+        background-image: url("../assets/images/frank-mckenna-150516.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    h4{
+        text-align: center;
+    }
+
+    label{
+        text-align: center;
+    }
+</style>

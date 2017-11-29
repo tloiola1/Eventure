@@ -1,0 +1,68 @@
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+.jumbotron{
+	padding: 5px 0 5px 0;
+}
+h1{
+	font-size: 55px !important;
+	font-weight: 500 !important;
+}
+img.burger{
+	height:100px;
+	width:100px;
+}
+img.fries{
+	height: 50px;
+	width:40px;
+	-webkit-transform: rotate(25deg);
+}
+img.soda{
+	height:60px;
+	width:30px;
+	-webkit-transform: rotate(-25deg);
+}
+li {
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+
+}
+ol{
+	padding-left: 0px;
+}
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+.col-lg-8,{
+	padding-left: 0;
+	padding-right: 0;
+	margin-right: 0;
+}
+
+small{
+	font-size: 30px;
+	margin-top: 0px;
+}
+
+@media screen and(min-width: 768px){
+	.jumbotron h1{
+		font-size: 90px !important;
+	}
+} 
+
+@media screen and(max-width: 500px){
+	.small-screen{
+}
+}
