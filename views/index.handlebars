@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Let's Have Fun!</title>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script src="javascript/app.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-<body>
-
-    <row>
+<row>
         <h1>Welcome Page</h1>
     </row>
 
@@ -43,18 +20,14 @@
                     <div class="modal-body" style="padding:40px 50px;">
                         <form role="form">
                             <div class="form-group">
-                                <label for="username">Name</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter your name">
-                            </div>
-                            <div class="form-group">
                                 <label for="email">E-Mail</label>
                                 <input type="text" class="form-control" id="email" placeholder="Enter your email">
                             </div>
                             <div class="form-group">
-                                <label for="guestDOB">Date of Birth</label>
-                                <input type="text" class="form-control" id="guestDOB" placeholder="When were you born?">
+                                <label for="username">Name</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter your name">
                             </div>
-                            <a href="guest.html" type="submit" class="btn btn-success btn-block" role="button">Submit</a>
+                            <a href="/guest" type="submit" class="btn btn-success btn-block" role="button">Submit</a>
                         </form>
                     </div>
                 </div>
@@ -77,8 +50,8 @@
                                 <label for="hostemail">E-Mail</label>
                                 <input type="text" class="form-control" id="hostemail" placeholder="Enter email">
                             </div>
-                            <a href="eventsToHost.html" type="submit" class="btn btn-success btn-block" role="button">Sign Up</a>
-                            <a href="eventsToHost.html" type="submit" class="btn btn-success btn-block" role="button">Login</a>
+                            <a href="/eventsToHost" type="submit" class="btn btn-success btn-block" role="button">Sign Up</a>
+                            <a href="/eventsToHost" type="submit" class="btn btn-success btn-block" role="button">Login</a>
                         </form>
                     </div>
                 </div>
@@ -101,5 +74,32 @@
 		});
     </script>
 
-</body>
-</html>
+<style type="text/css">
+    body{
+        background-image: url("../assets/images/alex-jodoin-246078.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 50px;
+        color: ghostwhite;
+    }
+
+    #buttons{
+        margin-left: 45%;
+    }
+
+    .modal-header, h4, .close {
+        background-color: #5cb85c;
+        color:white !important;
+        text-align: center;
+        font-size: 30px;
+    }
+    .modal-footer {
+        background-color: #f9f9f9;
+    }
+</style>

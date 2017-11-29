@@ -3,33 +3,28 @@ module.exports = function(sequelize, DataTypes) {
     // Giving the User model a name of type STRING
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len:[1,30]
+      allowNull: false
+    },
+    dob:{
+      type: DataTypes.DATE,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len:[1,30]
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len:[1,30]
+      allowNull: false
     },
-    category:{                 // this is the category of events the user would like to attend to to be linked to events
-      type: DataTypes.STRING,  // are available.
-      allowNull: true,         // maybe we could create up to three categories, show user categories saved andd use function find one
-      default: null
-    }                          // that would match user option
+    survey:{                 
+      type: DataTypes.STRING,  
+      allowNull: false
+    },
+    mood:{
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   });
-
-  // users.associate = function(models) {
-  //   // Associating Author with Posts
-  //   // When an Author is deleted, also delete any associated Posts
-  //   users.hasMany(models.events, {
-  //     onDelete: "cascade"
-  //   });
-  // };
-
   return users;
 };
