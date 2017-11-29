@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var passport = require("passport");
 
 // Routes
 // =============================================================
@@ -30,4 +31,11 @@ module.exports = function(app) {
   app.get("/host", function(req, res) {
       res.render('host');
   });
+
+//  Authenticate
+  app.post("/login",
+      passport.authenticate("local", { successRedirect: "/",
+                                       failureRedirect: "login",
+                                       failureFlash: true })
+      );
 };

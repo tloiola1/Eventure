@@ -43,16 +43,7 @@ db.sequelize.sync().then(function() {//{ force: true }
   });
 });
 
-var Schema = mongoose.Schema;
-var router = express.Router();
-var passport = require("passport");
 
-
-app.post("/login",
-    passport.authenticate("local"),
-    function (req, res) {
-        res.redirect("/events/" + req.user.username);
-    });
 
 
 
