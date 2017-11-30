@@ -23,6 +23,9 @@ app.use(session({ secret: 'social',resave: true, saveUninitialized:true})); // s
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+//  For routes (auth)
+var authRoute = require("./routes/auth.js")(app);
+
 
 //Set handlebars
 var expHbs = require('express-handlebars');
