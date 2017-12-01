@@ -62,13 +62,13 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/events", function(req, res){
-
+  app.get("/eventsToAttend", function(req, res){
+    
     db.events.findAll({
 
     })
     .then(function(dbEvents){
-      res.render("events", {events: dbEvents});
+      res.render("eventsToAttend", {events: dbEvents});
     });
   });
 
@@ -139,9 +139,9 @@ module.exports = function(app) {
   });
 
     //  Authenticate
-    app.post("/login",
-        passport.authenticate("local", { successRedirect: "/",
-            failureRedirect: "login",
-            failureFlash: true })
-    );
+    // app.post("/login",
+    //     passport.authenticate("local", { successRedirect: "/",
+    //         failureRedirect: "login",
+    //         failureFlash: true })
+    // );
 };
