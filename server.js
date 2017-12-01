@@ -10,10 +10,11 @@ var app = express();
 //  ENV
 var env = require("dotenv").load();
 
-//  For routes (auth)
-var authRoute = require("./routes/auth.js")(app, passport);
+
 //  passport strategies
-require("./config/passport/passport.js")(passport, db.user);
+require("./config/passport/passport.js")(passport, db.users);
+
+
 
 //Set handlebars
 var expHbs = require('express-handlebars');
@@ -38,6 +39,8 @@ app.set('views', './views');
 
 // Routes
 // =============================================================
+//  For routes (auth)
+require("./routes/auth.js")(app, passport);
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
