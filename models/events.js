@@ -5,8 +5,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    category:{
+    location:{
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    dateTime:{
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    numberOfAttends:{
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     description:{

@@ -12,15 +12,6 @@ var validator = require("validator");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the Burgers
-  // app.get("/", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    // db.users.findAll({}).then(function(dbUser) {
-      // We have access to the Burgers as an argument inside of the callback function
-      // res.render('frontpage', {users: dbUser});
-    // });
-  // });
-
   // POST route for saving a new Burger
   app.post("/api/create/user", function(req, res, callback) {
     // console.log(req);
@@ -71,11 +62,13 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/events", function(req, res){
+  app.get("/eventsToAttend", function(req, res){
+    
+    db.events.findAll({
 
-    db.events.findAll({})
+    })
     .then(function(dbEvents){
-      res.render("events", {events: dbEvents});
+      res.render("eventsToAttend", {events: dbEvents});
     });
   });
 
@@ -112,4 +105,43 @@ module.exports = function(app) {
       console.log(dbEvents);
     })
   });
+
+  app.get("/api/events/:category", function(req, res) {
+    // console.log("#####################################");
+    // console.log(req.params.category);
+    db.events.findAll({
+      where:{
+        category: req.params.category
+      }
+    }).then(function(dbEvents) {
+      // console.log(dbEvents);
+      res.json(dbEvents);
+    });
+  });
+
+  app.get("/manage", function(req, res) {
+    db.events.findAll({
+
+    })
+    .then(function(dbEvents){
+      res.render("manage", {events: dbEvents});
+    });
+    // console.log("##################################### User ID");
+    // console.log(req.params.id);
+    // db.events.findAll({
+    //   where:{
+    //     userId: req.params.id
+    //   }
+    // }).then(function(dbEvents) {
+    //   console.log(dbEvents);
+    //   res.render("manage", {events: dbEvents});
+    // });
+  });
+
+    //  Authenticate
+    // app.post("/login",
+    //     passport.authenticate("local", { successRedirect: "/",
+    //         failureRedirect: "login",
+    //         failureFlash: true })
+    // );
 };

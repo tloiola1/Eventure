@@ -4,7 +4,7 @@ $(function() {
   $(".host-event-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    var userId = $("#user_id").val().trim();
+    var userId = localStorage.getItem("id");
     var name = $("#event_name").val().trim();
     var category = $("#category").val().trim();
     var description = $("#description").val().trim();
@@ -29,3 +29,8 @@ $(function() {
     });
   });
 });
+
+// $("#see").on("click", function(){
+//     var categ = $(this).data("category");
+//     $("#id-display").html(categ);
+// })

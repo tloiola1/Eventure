@@ -1,11 +1,28 @@
-<li class="breadcrumb container">
-		<div class="col-lg-3">
-		{{name}}
+
+ 	<li class="breadcrumb container">
+ 		<div class="row col-lg-12">
+			<div class="col-lg-10">
+				{{category}}
+			</div>
+			<div class="col-lg-2">
+				<button type="submit" id="see" class="btn btn-primary" style="width: inherit" data-category="{{category}}">See</button>
+			</div>
 		</div>
-		<div class="col-lg-3">
-		{{category}}
+		<br>
+		<br>
+	</li>
+	{{!-- <div id="sub-category" class="row col-lg-12">
+			<div class="col-lg-2">
+				{{name}}
+			</div>
+			<div class="col-lg-8">
+				{{description}}
+			</div>
+			<div class="col-lg-2">
+				<button type="submit" id="attend" class="btn btn-primary" style="width: inherit">Attend this Event</button>
+			</div>
 		</div>
-		<div class="col-lg-6">
-		{{description}}
-		</div>
-</li>
+			 --}}
+
+
+

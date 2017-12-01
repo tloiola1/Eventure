@@ -1,53 +1,104 @@
-{{!-- <div class="container">
-  <div class="row">
-    <h1 class="col-lg-12 text-center jumbotron"><img class="burger" src="../assets/images/burger.png" alt="burger"> Eat-Da-Burger!<br><small><em>The Sequel... ize</em></small></h1>
+<row>
+    <h1>Welcome Page</h1>
+</row>
 
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      <h2 class="text-center">Enjoy Das Burgers!</h2>
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-default btn-lg" id="guestbttn">Guest</button>
+    <button type="button" class="btn btn-default btn-lg" id="hostbttn">Host</button>
 
-      <ol>
-        {{#each burgers}}
-          {{#if devoured}}
-            {{> burgers/burger-block}}
-          {{/if}}
-        {{/each}}
-      </ol>
+    <!-- Guest Modal -->
+    <div class="modal fade" id="guestmodal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>WELCOME!</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="username">Email</label>
+                            <input type="text" class="form-control" id="username" placeholder="johnDoe@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Password</label>
+                            <input type="text" class="form-control" id="email" placeholder="Password">
+                        </div>
+                        <a {{!-- href="/guest" --}} id="validateUser" type="submit" class="btn btn-success btn-block" role="button">Enter</a>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      <h2 class="text-center">Devoured Burgers.</h2>
- 
-      <ol>
-        {{#each burgers}}
-          {{#unless devoured}}
-            {{> burgers/burger-block}}
-          {{/unless}}
-        {{/each}}
-      </ol>
+    <!-- Host Modal -->
+    <div class="modal fade" id="hostmodal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Host Login</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="hostemail">E-Mail</label>
+                            <input type="text" class="form-control" id="hostemail" placeholder="Enter email">
+                        </div>
+                        <a href="eventsToHost.html" type="submit" class="btn btn-success btn-block" role="button">Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col-lg-12  text-center"> 
-      <h2>Add Da Burger</h2>
-      <form class="create-form col-lg-12 col-md-12 breadcrumb" action="api/burgers" method="POST">
+</div>
 
-        <div class="form-group col-lg-5">
-          <label for="bur">Favorite Burger</label>
-          <br>
-          <input type="text" id="burg" name="fav_burger" style="width: inherit">
-        </div>
-        <div class="form-group col-lg-5">
-          <label for="nam">Name for Order</label>
-          <br>
-          <input type="text" id="name" name="client_name" style="width: inherit">
-        </div>
-        <div class="form-group col-lg-2">
-          <label for="tab">Table</label>
-          <br>
-          <input type="number" id="table" name="table_number" style="width: inherit">
-        </div>
-        <div class="col-lg-12">
-          <img class="soda" src="../assets/images/soda.jpg" alt="soda"><button type="submit" class="btn btn-primary">Place Order</button><img class="fries" src="../assets/images/fries.png" alt="fries">
-        </div>
-      </form>
-  </div>
-</div> --}}
+<script>
+    $(document).ready(function(){
+        $("#guestbttn").click(function(){
+            $("#guestmodal").modal();
+        });
+    });
+
+    $(document).ready(function(){
+        $("#hostbttn").click(function(){
+            $("#hostmodal").modal();
+        });
+    });
+</script>
+
+<style type="text/css">
+    body{
+        background-image: url("../assets/images/alex-jodoin-246078.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 50px;
+        color: ghostwhite;
+    }
+
+    #buttons{
+        margin-left: 45%;
+    }
+
+    .modal-header, h4, .close {
+        background-color: #5cb85c;
+        color:white !important;
+        text-align: center;
+        font-size: 30px;
+    }
+    .modal-footer {
+        background-color: #f9f9f9;
+    }
+</style>
