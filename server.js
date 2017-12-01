@@ -4,12 +4,21 @@ var session = require("express-session");
 var bodyParser = require("body-parser");
 var db = require("./models");
 var passport = require("passport");
+var PORT = process.env.PORT || 8080;//
+var app = express();
+
 //  ENV
 var env = require("dotenv").load();
 
-var PORT = process.env.PORT || 8080;// 
+//  For routes (auth)
+var authRoute = require("./routes/auth.js")(app, passport);
+//  passport strategies
+require("./config/passport/passport.js")(passport, db.user);
 
-var app = express();
+//Set handlebars
+var expHbs = require('express-handlebars');
+
+
 
 app.use(express.static('public'));
 
@@ -23,15 +32,10 @@ app.use(session({ secret: 'social',resave: true, saveUninitialized:true})); // s
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-//  For routes (auth)
-var authRoute = require("./routes/auth.js")(app);
-
-
-//Set handlebars
-var expHbs = require('express-handlebars');
-
 app.engine('handlebars', expHbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+app.set('views', './views');
+
 // Routes
 // =============================================================
 require("./routes/api-routes.js")(app);
