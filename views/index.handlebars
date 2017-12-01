@@ -1,29 +1,104 @@
+<row>
+    <h1>Welcome Page</h1>
+</row>
 
-  <div class="container">
-      <div class="row">
-      <form id="user-form" class="col-md-6">
-        <h1 class="col-md-12">New User</h1>
-        <div class="col-md-12 breadcrumb">
-          <input placeholder="Name" id="user_name" type="name" style="width:inherit;" />
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-default btn-lg" id="guestbttn">Guest</button>
+    <button type="button" class="btn btn-default btn-lg" id="hostbttn">Host</button>
+
+    <!-- Guest Modal -->
+    <div class="modal fade" id="guestmodal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>WELCOME!</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="username">Email</label>
+                            <input type="text" class="form-control" id="username" placeholder="johnDoe@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Password</label>
+                            <input type="text" class="form-control" id="email" placeholder="Password">
+                        </div>
+                        <a {{!-- href="/guest" --}} id="validateUser" type="submit" class="btn btn-success btn-block" role="button">Enter</a>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-md-12 breadcrumb">
-          <input placeholder="Email" id="user_email" type="email" style="width:inherit;" />
-        </div>
-        <div class="col-md-12 breadcrumb">
-          <input placeholder="Password" id="user_password" type="password" style="width:inherit;" />
-        </div>
-        <div class="col-md-12">
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">What Would Like to do?
-          <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" id="events">Go to Event</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" id="host">Host an Event</a></li>
-          </ul>
-        </div>
-        </div>
-        
-      </form>
     </div>
-  </div>
+
+    <!-- Host Modal -->
+    <div class="modal fade" id="hostmodal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Host Login</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="hostemail">E-Mail</label>
+                            <input type="text" class="form-control" id="hostemail" placeholder="Enter email">
+                        </div>
+                        <a href="eventsToHost.html" type="submit" class="btn btn-success btn-block" role="button">Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#guestbttn").click(function(){
+            $("#guestmodal").modal();
+        });
+    });
+
+    $(document).ready(function(){
+        $("#hostbttn").click(function(){
+            $("#hostmodal").modal();
+        });
+    });
+</script>
+
+<style type="text/css">
+    body{
+        background-image: url("../assets/images/alex-jodoin-246078.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 50px;
+        color: ghostwhite;
+    }
+
+    #buttons{
+        margin-left: 45%;
+    }
+
+    .modal-header, h4, .close {
+        background-color: #5cb85c;
+        color:white !important;
+        text-align: center;
+        font-size: 30px;
+    }
+    .modal-footer {
+        background-color: #f9f9f9;
+    }
+</style>
