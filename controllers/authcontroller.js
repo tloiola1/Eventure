@@ -12,8 +12,9 @@ exports.guest = function (req, res) {
     res.render("guest")
 };
 
-exports.host = function (req,res) {
-    res.render("host") // or "eventsToHost
+//??????
+exports.events = function (req, res) {
+    res.render("events")
 };
 
 exports.logout = function(req,res){
