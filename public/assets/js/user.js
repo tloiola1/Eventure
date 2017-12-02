@@ -24,7 +24,6 @@ $(function() {
         // location.href = "/eventsToHost";
     });
   });
-// console.log(window.location.href);
 
 $("#picturebttn").on("click", function(){
   alert("good");
