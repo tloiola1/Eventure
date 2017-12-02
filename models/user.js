@@ -20,7 +20,6 @@ module.exports = function (sequelize, DataTypes) {
         survey: {
             type: DataTypes.STRING,
             allowNull: true
-
         }
     });
     return users;
