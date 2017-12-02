@@ -1,7 +1,5 @@
-<img src="frank-mckenna-150516.jpg">
 
-
-<img src="frank-mckenna-150516.jpg">
+<img src="../assets/images/frank-mckenna-150516.jpg">
 
 <div class="container col-sm-6">
     <h2>Collapsible Panel</h2>
@@ -103,14 +101,30 @@
                 </h4>
             </div>
             <div id="collapse2" class="panel-collapse collapse in">
-                <div class="panel-body">Panel Body</div>
+                <div class="panel-body">
+                    <video id="video" width="640" height="480" autoplay="false"></video>
+                    <button id="snap">Snap Photo</button>
+                    <canvas id="canvas" width="640" height="480"></canvas>
+                </div>
                 <div class="panel-footer">
                     <button class="btn btn-primary" type="button"  id="submitpicture">Submit</button>
                 </div>
             </div>
         </div>
-    </div>
+  </div>
+
 </div>
+
+    <!--<script>-->
+        <!--$(document).ready(function(){-->
+            <!--$("#surveybttn").click(function(){-->
+                <!--$("#surveymodal").modal();-->
+            <!--});-->
+            <!--$("#picturebttn").click(function(){-->
+                <!--$("#picturemodal").modal();-->
+            <!--});-->
+        <!--});-->
+    <!--</script>-->
 
 <!--&lt;!&ndash;This button leads to the events the user should go to, appears ONLY after survey and picture are done&ndash;&gt;-->
 <!--<div>-->
