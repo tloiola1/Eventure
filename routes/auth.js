@@ -3,6 +3,7 @@ var authController = require("../controllers/authcontroller.js");
 module.exports = function (app, passport) {
     app.get("/signup", authController.signup);
     app.get("/", authController.signin);
+    app.get("/guest", authController.guest);
 
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())
