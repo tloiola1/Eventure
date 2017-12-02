@@ -1,11 +1,7 @@
 <img src="../assets/images/jeff-brown-246388.jpg">
 
-
-<img src="jeff-brown-246388.jpg">
-
 <row>
     <h1>Eventure</h1>
-
     <h5>The cure for lonely Friday Nights!</h5>
     <h5>Find events you would be interested in and meet people interesting!</h5>
 </row>
@@ -18,25 +14,27 @@
     <!-- Guest Modal -->
     <div class="modal fade" id="guestmodal" role="dialog">
         <div class="modal-dialog">
-             <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header" style="padding:35px 50px;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4>WELCOME!</h4>
-                    </div>
-                    <div class="modal-body" style="padding:40px 50px;">
-                        <form role="form" method="post" action="signin" name="signin">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" name="email" id="username" placeholder="johnDoe@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                            </div>
-                            <input value="Enter" type="submit" class="btn btn-success btn-block" role="button" />
-                        </form>
-                    </div>
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>WELCOME!</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="username">Email</label>
+                            <input type="text" class="form-control" id="username" placeholder="johnDoe@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Password</label>
+                            <input type="text" class="form-control" id="email" placeholder="Password">
+                        </div>
+                        <a href="/guest" type="submit" class="btn btn-success btn-block" role="button">Enter</a>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
