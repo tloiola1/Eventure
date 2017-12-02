@@ -25,8 +25,8 @@ $(function() {
     });
   });
 
-$("#picturebttn").on("click", function(){
-  alert("good");
+$("#camera").on("click", function(){
+  $("#canvas").hide();
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var localStream;
@@ -41,12 +41,13 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
 document.getElementById("snap").addEventListener("click", function() {
   
-  context.drawImage(video, 0, 0, 500, 300);
+  $("#canvas").show();
+  context.drawImage(video, 0, 0, 380, 250);
   $("#video").hide();
   $("#snap").hide();
   localStream.getVideoTracks()[0].stop();
 
-  console.log(localStream);
+  
 });
 });
 });
