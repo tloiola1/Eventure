@@ -1,7 +1,7 @@
 <p>
     <!--<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Survey</a>-->
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Survey</button>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pictureContent" aria-expanded="false" aria-controls="collapseExample">Picture</button>
+    <button id="picturebttn" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pictureContent" aria-expanded="false" aria-controls="collapseExample">Picture</button>
 </p>
 
     <div class="collapse" id="collapseExample">
@@ -79,6 +79,13 @@
             <h4>Smile!</h4>
             <img src="half-stick-figure.png" id="imagepreview">
         </div>
+        <video id="video" width="640" height="480" autoplay="false"></video>
+        <button id="snap">Snap Photo</button>
+        <canvas id="canvas" width="640" height="480"></canvas>
+  </div>
+
+</div>
+        </div>
     </div>
 
         <!--This button leads to the events the user should go to, appears ONLY after survey and picture are done-->
@@ -92,9 +99,6 @@
             $("#surveybttn").click(function(){
                 $("#surveymodal").modal();
             });
-        });
-
-        $(document).ready(function(){
             $("#picturebttn").click(function(){
                 $("#picturemodal").modal();
             });
