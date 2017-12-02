@@ -1,9 +1,17 @@
 var authController = require("../controllers/authcontroller.js");
 
 module.exports = function (app, passport) {
+
+    function isLoggedIn(req, res, next) {
+        if (req.isAuthenticated())
+            return next();
+        authController.signin(req,res,next);
+    }
+
     app.get("/signup", authController.signup);
-    app.get("/", authController.signin);
-    app.get("/guest", authController.guest);
+    //  next is function(req, res)......
+    app.get("/", isLoggedIn, function(req, res) { res.redirect('/eventsToAttend')});
+    app.get("/guest", isLoggedIn, authController.guest);
 
     //  where redirect when signup success???? Also change below if different
     app.post("/signup", passport.authenticate("local-signup", {
@@ -11,11 +19,6 @@ module.exports = function (app, passport) {
         failureRedirect: "/signup"
         }
     ));
-    function isLoggedIn(req, res, next) {
-        if (req.isAuthenticated())
-            return next();
-        res.redirect('/');
-    }
 
     app.get("/events", isLoggedIn, authController.guest);
     app.get("/logout", authController.logout);
