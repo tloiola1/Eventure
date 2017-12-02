@@ -39,3 +39,6 @@ console.log(window.location.href);
 //   $("#snap").hide();
 //   console.log(video.src);
 // });
+
+
+
