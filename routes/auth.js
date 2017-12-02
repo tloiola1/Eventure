@@ -20,6 +20,8 @@ module.exports = function (app, passport) {
         }
     ));
 
+    app.get("/profile", isLoggedIn, authController.profile);
+
     app.get("/events", isLoggedIn, authController.guest);
     app.get("/logout", authController.logout);
 
