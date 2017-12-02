@@ -7,7 +7,7 @@ $(function() {
     
     var user = {
       email: $("#userEmail").val().trim()
-    }
+    };
     console.log(user);
     // Send the POST request.
     $.ajax({
