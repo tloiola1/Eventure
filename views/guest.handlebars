@@ -1,3 +1,5 @@
+<img src="frank-mckenna-150516.jpg">
+
 <p>
     <!--<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Survey</a>-->
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Survey</button>
@@ -81,33 +83,20 @@
         </div>
     </div>
 
-        <!--This button leads to the events the user should go to, appears ONLY after survey and picture are done-->
-        <div>
-            <a href="/eventsToAttend" type="button" class="btn btn-success" role="button">Continue</a>
-            <a href="/contact" type="submit" class="btn btn-success btn-block" role="button">Complain to the Devs</a>
-        </div>
-
-    <script>
-        $(document).ready(function(){
-            $("#surveybttn").click(function(){
-                $("#surveymodal").modal();
-            });
-        });
-
-        $(document).ready(function(){
-            $("#picturebttn").click(function(){
-                $("#picturemodal").modal();
-            });
-        });
-    </script>
+    <!--This button leads to the events the user should go to, appears ONLY after survey and picture are done-->
+    <div>
+        <a href="/eventsToAttend" type="button" class="btn btn-success" role="button">Continue</a>
+        <a href="/contact" type="submit" class="btn btn-success btn-block" role="button">Complain to the Devs</a>
+    </div>
 
 <style type="text/css">
-    body{
-        background-image: url("../assets/images/frank-mckenna-150516.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: 100%;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -999;
+        height: 100vh;
+        width: 100vw;
     }
 
     h4{
@@ -116,5 +105,9 @@
 
     label{
         text-align: center;
+    }
+
+    .card-body{
+        background-color: white;
     }
 </style>
