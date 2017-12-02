@@ -19,14 +19,31 @@
 </head>
 	<body>
 		{{{ body }}}
-		<footer class="footer">
-	        <div class="container">
-	            <p>
-	            	<a href="/api/events/all" target="_blank">API Events List | </a>
-	            	<a href="/api/users/all"  target="_blank">API Users List</a>
-	            </p>
-	        </div>
-	    </footer>
-		
+
+        <nav class="navbar navbar-fixed-bottom" id="footer">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <a href="/api/events/all" target="_blank" id="apilink">API Events List | </a>
+                    <a href="/api/users/all"  target="_blank" id="apilink"> API Users List | </a>
+                    <a href="/contact" target="_blank" id="devbttn"> Complain to the Devs</a>
+                </ul>
+            </div>
+        </nav>
+
+    <style>
+        footer{
+            color: transparent !important;
+        }
+
+        #apilink{
+            color: black;
+        }
+
+        #devbttn{
+            color: black;
+        }
+
+    </style>
+
 	</body>
 </html>
