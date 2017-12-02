@@ -9,7 +9,8 @@ exports.signin = function (req, res) {
 };
 
 exports.guest = function (req, res) {
-    res.render("guest")
+    res.render("guest");
+    console.log("New User");
 };
 
 exports.logout = function(req,res){
