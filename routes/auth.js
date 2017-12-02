@@ -21,8 +21,8 @@ module.exports = function (app, passport) {
     app.get("/events", isLoggedIn, authController.guest);
     app.get("/logout", authController.logout);
 
-    app.post("/", passport.authenticate("local-signin", {
-        successRedirect: "/events",
+    app.post("/signin", passport.authenticate("local-signin", {
+        successRedirect: "/eventsToAttend",
         failureRedirect: "/signup"
         }
     ));
