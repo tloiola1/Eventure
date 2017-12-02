@@ -22,16 +22,17 @@
                     <h4>WELCOME!</h4>
                 </div>
                 <div class="modal-body" style="padding:40px 50px;">
-                    <form role="form">
+                    <form role="form" method="post" action="signin">
                         <div class="form-group">
-                            <label for="username">Email</label>
-                            <input type="text" class="form-control" id="username" placeholder="johnDoe@email.com">
+                            <label for="email">Email</label>
+                            <input name="email" type="text" class="form-control" id="username" placeholder="johnDoe@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="email">Password</label>
-                            <input type="text" class="form-control" id="email" placeholder="Password">
+                            <label for="password">Password</label>
+                            <input name="password" type="password" class="form-control" id="email" placeholder="Password">
                         </div>
-                        <a type="submit" class="btn btn-success btn-block" role="button">Enter</a>
+                        
+                        <input type="submit" class="btn btn-success btn-block" role="button" value="Enter" />
                     </form>
                 </div>
             </div>
