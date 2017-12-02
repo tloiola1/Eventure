@@ -13,21 +13,19 @@ var validator = require("validator");
 module.exports = function(app) {
 
   // POST route for saving a new Burger
-  app.post("/api/create/user", function(req, res, callback) {
-    // console.log(req);
-    var name = req.body.name;
-    var email = req.body.email;
-    var password = req.body.password;
-    var category = req.body.category;
+  app.get("/api/find/user", function(req, res, callback) {
+    console.log("REQUIRE ##########################");
+    console.log(req.body);
+    // var email = req.body.email;
     
-    db.users.create({
-      name,
-      email,
-      password,
-      category      
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
+    // db.users.create({
+    //   name,
+    //   email,
+    //   password,
+    //   category      
+    // }).then(function(dbUser) {
+    //   res.json(dbUser);
+    // });
   });
   // req.params.id
   app.delete("/api/delete/:id", function(req, res) {
@@ -62,13 +60,13 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/events", function(req, res){
-
+  app.get("/eventsToAttend", function(req, res){
+    
     db.events.findAll({
 
     })
     .then(function(dbEvents){
-      res.render("events", {events: dbEvents});
+      res.render("eventsToAttend", {events: dbEvents});
     });
   });
 

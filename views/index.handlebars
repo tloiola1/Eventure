@@ -1,14 +1,15 @@
 <row>
-        <h1>Welcome Page</h1>
-    </row>
+    <h1>Welcome Page</h1>
+</row>
 
     <div class="container">
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-default btn-lg" id="guestbttn">Guest</button>
 
-        <!-- Guest Modal -->
-        <div class="modal fade" id="guestmodal" role="dialog">
-            <div class="modal-dialog">
+
+    <!-- Guest Modal -->
+    <div class="modal fade" id="guestmodal" role="dialog">
+        <div class="modal-dialog">
 
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -34,15 +35,16 @@
         </div>
 
         <a href="/contact" type="submit" class="btn btn-success btn-block" role="button">Complain to the Devs</a>
-
     </div>
 
-    <script>
-        $(document).ready(function(){
-            $("#guestbttn").click(function(){
-                $("#guestmodal").modal();
-            });
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#guestbttn").click(function(){
+            $("#guestmodal").modal();
         });
+
     </script>
 
 <style type="text/css">
