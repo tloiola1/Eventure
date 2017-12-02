@@ -5,16 +5,15 @@ exports.signup = function(req, res) {
 };
 
 exports.signin = function (req, res) {
-    res.render("signin");
+    res.render("index");
 };
 
 exports.guest = function (req, res) {
     res.render("guest")
 };
 
-//??????
-exports.events = function (req, res) {
-    res.render("events")
+exports.host = function (req,res) {
+    res.render("host") // or "events
 };
 
 exports.logout = function(req,res){

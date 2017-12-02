@@ -18,7 +18,7 @@
                         <h4>WELCOME!</h4>
                     </div>
                     <div class="modal-body" style="padding:40px 50px;">
-                        <form role="form">
+                        <form role="form" method="post">
                             <div class="form-group">
                                 <label for="username">Email</label>
                                 <input type="text" class="form-control" id="username" placeholder="johnDoe@email.com">
@@ -27,7 +27,7 @@
                                 <label for="email">Password</label>
                                 <input type="text" class="form-control" id="email" placeholder="Password">
                             </div>
-                            <a href="/guest" type="submit" class="btn btn-success btn-block" role="button">Enter</a>
+                            <input value="Enter" type="submit" class="btn btn-success btn-block" role="button" />
                         </form>
                     </div>
                 </div>
@@ -37,13 +37,13 @@
         <a href="/contact" type="submit" class="btn btn-success btn-block" role="button">Complain to the Devs</a>
     </div>
 
-</div>
 
 <script>
     $(document).ready(function(){
         $("#guestbttn").click(function(){
             $("#guestmodal").modal();
         });
+    });
 
     </script>
 
