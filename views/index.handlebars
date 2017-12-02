@@ -21,36 +21,9 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="username">Email</label>
-                            <input type="text" class="form-control" id="username" placeholder="johnDoe@email.com">
+                            <input type="text" class="form-control" id="userEmail" placeholder="johnDoe@email.com">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Password</label>
-                            <input type="text" class="form-control" id="email" placeholder="Password">
-                        </div>
-                        <a {{!-- href="/guest" --}} id="validateUser" type="submit" class="btn btn-success btn-block" role="button">Enter</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Host Modal -->
-    <div class="modal fade" id="hostmodal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header" style="padding:35px 50px;">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4>Host Login</h4>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="hostemail">E-Mail</label>
-                            <input type="text" class="form-control" id="hostemail" placeholder="Enter email">
-                        </div>
-                        <a href="eventsToHost.html" type="submit" class="btn btn-success btn-block" role="button">Login</a>
+                        <a id="userValidate" type="submit" class="btn btn-success btn-block" role="button">Login</a>
                     </form>
                 </div>
             </div>
