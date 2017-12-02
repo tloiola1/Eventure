@@ -136,7 +136,7 @@ module.exports = function(app) {
     // });
   });
 
-    //  Authenticate
+    // //  Authenticate
     // app.post("/login",
     //     passport.authenticate("local", { successRedirect: "/",
     //         failureRedirect: "login",
