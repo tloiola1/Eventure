@@ -96,14 +96,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#collapse2">Collapsible panel</a>
+                    <a id="camera" data-toggle="collapse" href="#collapse2">Collapsible panel</a>
                 </h4>
             </div>
             <div id="collapse2" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <video id="video" width="640" height="480" autoplay="false"></video>
+                    <video id="video" width="400" height="250" autoplay="false"></video>
+                    <canvas id="canvas" width="400" height="250"></canvas>
                     <button id="snap">Snap Photo</button>
-                    <canvas id="canvas" width="640" height="480"></canvas>
                 </div>
                 <div class="panel-footer">
                     <button class="btn btn-primary" type="button"  id="submitpicture">Submit</button>
