@@ -1,7 +1,7 @@
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
-
+var request = require('request');
 // Dependencies
 // =============================================================
 
@@ -142,4 +142,13 @@ module.exports = function(app) {
     //         failureRedirect: "login",
     //         failureFlash: true })
     // );
+
+    app.get('/ticketmaster', function(req, res) {
+		request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=football', function (error, response, body) {
+			console.log('error:', error); // Print the error if one occurred
+			console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+			console.log('body:', body); // Print the HTML for the Google homepage.
+            res.json(body);
+		});
+	});
 };

@@ -1,3 +1,5 @@
+    <img src="../assets/images/cesar-couto-420986.jpg">
+
     <div class="container col-sm-12">
         <!--EVENT THE GUEST IS BEST MATCHED TOO-->
         <div class="container col-sm-8 left">
@@ -22,15 +24,32 @@
         </div>
     </div>
 
-    <a href="/contact" type="submit" class="btn btn-success btn-block" role="button">Complain to the Devs</a>
+    <script>
+                $.ajax({
+                    type:"GET",
+                    url:"/ticketmaster",
+                    async:true,
+                    dataType: "json",
+                    success: function(json) {
+                        console.log(json);
+                        // Parse the response.
+                        // Do other things.
+                    },
+                    error: function(xhr, status, err) {
+                        // This time, we do not end up here!
+                    }
+                });
+
+    </script>
 
 <style type="text/css">
-    body{
-        background-image: url("../assets/images/cesar-couto-420986.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: 100%;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100vh;
+        width: 100vw;
     }
 
     .left{
