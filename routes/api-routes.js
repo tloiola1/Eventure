@@ -148,6 +148,7 @@ module.exports = function(app) {
     // );
 
 
+
     app.get('/findUser', function(req, res) {
         console.log(req.user.email);
         userEmail = req.user.email;
