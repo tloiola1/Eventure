@@ -14,8 +14,11 @@ var validator = require("validator");
 module.exports = function(app) {
 
   // POST route for saving a new Burger
-  app.get("/api/get/img", function() {
-    console.log("REQUIRE ##########################");
+  app.post("/api/get/img", function() {
+    console.log(window.location.href)
+
+
+    // console.log("REQUIRE ##########################");
     
     // var Dropbox = require('dropbox');
     // var dbx = new Dropbox({ accessToken: 'EtE_0DzV-AcAAAAAAAADHAZ8rRB0huzoKTaJPx8VnxHVQmYH7yzVvVr989u9DFFk' });
