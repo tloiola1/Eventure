@@ -2,7 +2,8 @@
 // =============================================================
 var path = require("path");
 var passport = require("passport");
-
+var info = require("../config/passport/passport.js");
+var userInfo = info.userInfo;
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -31,5 +32,8 @@ module.exports = function(app) {
   // app.get("/blog", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/blog.html"));
   // });
+
+
+
 
 };
