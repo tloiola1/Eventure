@@ -76,7 +76,8 @@ module.exports = function (passport, user) {
                     return done(null, false, { message: 'Incorrect password.' });
                 }
                 userInfo = user.get();
-                console.log(userInfo);
+                var emailadd = userInfo.email;
+
 
                 return done(null, userInfo);
             }).catch(function (err) {
