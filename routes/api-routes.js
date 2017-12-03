@@ -147,7 +147,7 @@ module.exports = function(app) {
     //         failureFlash: true })
     // );
 
-    app.get('/ticketmaster', function(req, res) {
+    app.get('/findUser', function(req, res) {
       console.log(req.user.email);
       userEmail = req.user.email;
       db.users.findOne({
@@ -155,16 +155,18 @@ module.exports = function(app) {
           email: userEmail
         }
       }).then(function(answer){
-        console.log(answer);
-      })
+        console.log("&&&&&&&&&&&&&&&&&&&");
+        return answer;
+      });
+    }); 
 
-		// request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=football', function (error, response, body) {
-		// 	console.log('error:', error); // Print the error if one occurred
-		// 	console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-		// 	console.log('body:', body); // Print the HTML for the Google homepage.
-  //           res.json(body);
-		// });
-	}); //  ticketmaster close
+    app.get('/ticketmaster', function(req, res) {
 
-    app.get('/')
+        request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName='+ classification, 
+          function (error, response, body) {
+          console.log('error:', error); // Print the error if one occurred
+          console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+          console.log('body:', body); // Print the HTML for the Google homepage.
+        });
+    });
 };

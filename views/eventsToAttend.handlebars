@@ -31,10 +31,11 @@
         email
     }
                 $.ajax({
-                    url:"/ticketmaster",
+                    url:"/findUser",
                     method:"GET",
                     data: user
                 }).then(function(answer){
+                    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                     console.log(answer);
                 });
 
