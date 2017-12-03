@@ -42,6 +42,10 @@
 
 <script>
     $(document).ready(function(){
+        $(document).on("submit", function () {
+            var email = $("#username").val().trim();
+            localStorage.setItem("email", email);
+        });
         $("#guestbttn").click(function(){
             $("#guestmodal").modal();
         });

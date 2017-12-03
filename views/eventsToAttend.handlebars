@@ -25,19 +25,17 @@
     </div>
 
     <script>
+    console.log(localStorage.getItem("email"));
+    var email = localStorage.getItem("email");
+    var user = {
+        email
+    }
                 $.ajax({
-                    type:"GET",
                     url:"/ticketmaster",
-                    async:true,
-                    dataType: "json",
-                    success: function(json) {
-                        console.log(json);
-                        // Parse the response.
-                        // Do other things.
-                    },
-                    error: function(xhr, status, err) {
-                        // This time, we do not end up here!
-                    }
+                    method:"GET",
+                    data: user
+                }).then(function(answer){
+                    console.log(answer);
                 });
 
     </script>
