@@ -29,13 +29,30 @@
     var email = localStorage.getItem("email");
     var user = {
         email
-    }
+    };
+        var survey;
                 $.ajax({
-                    url:"/ticketmaster",
+                    url:"/findUser",
                     method:"GET",
                     data: user
                 }).then(function(answer){
-                    console.log(answer);
+                    console.log( "This is survey: " + answer.survey);
+                    survey = answer.survey; // soccer
+
+                $.ajax({
+                    type:"GET",
+                    url:"/ticketmaster/" + survey,
+                    async:true,
+                    dataType: "json",
+                    success: function(json) {
+                        console.log(json);
+                        // Parse the response.
+                        // Do other things.
+                    },
+                    error: function(xhr, status, err) {
+                        // This time, we do not end up here!
+                    }
+                });
                 });
 
     </script>
