@@ -6,6 +6,7 @@ var request = require('request');
 // =============================================================
 
 // Requiring our Burger model
+var Dropbox = require("dropbox")
 var db = require("../models");
 var validator = require("validator");
 // Routes
@@ -13,19 +14,18 @@ var validator = require("validator");
 module.exports = function(app) {
 
   // POST route for saving a new Burger
-  app.get("/api/find/user", function(req, res, callback) {
+  app.get("/api/get/img", function() {
     console.log("REQUIRE ##########################");
-    console.log(req.body);
-    // var email = req.body.email;
     
-    // db.users.create({
-    //   name,
-    //   email,
-    //   password,
-    //   category      
-    // }).then(function(dbUser) {
-    //   res.json(dbUser);
-    // });
+    // var Dropbox = require('dropbox');
+    // var dbx = new Dropbox({ accessToken: 'EtE_0DzV-AcAAAAAAAADHAZ8rRB0huzoKTaJPx8VnxHVQmYH7yzVvVr989u9DFFk' });
+    // dbx.filesListFolder({path: ''})
+    //   .then(function(response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function(error) {
+    //     console.log(error);
+    //   });
   });
   // req.params.id
   app.delete("/api/delete/:id", function(req, res) {
