@@ -62,7 +62,7 @@ $(function() {
   $("#submitpicture").on("click", function(res, callback){
     $.ajax({
       url: "/api/get/img",
-      method: "POST"
+      method: "POST",
       data: window
     }).then(function(answer){
       console.log("**********************");
