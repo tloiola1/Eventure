@@ -20,7 +20,9 @@ module.exports = function (app, passport) {
         }
     ));
 
-    app.get("/events", isLoggedIn, authController.guest);
+    app.get("/profile", isLoggedIn, authController.profile);
+
+    app.get("/eventsToAttend", isLoggedIn, authController.events);
     app.get("/logout", authController.logout);
 
     app.post("/signin", passport.authenticate("local-signin", {
