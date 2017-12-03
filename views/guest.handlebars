@@ -14,74 +14,66 @@
                     </div>
                     <div id="collapse1" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <div class="questions">
-                                <p>Question 1: What is your favorite sport? </p>
-                                <form>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="football">Football
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="soccer">Soccer
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="basketball">Basketball
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="hockey">Hockey
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio">I Don't Like Sports
-                                    </label>
-                                </form>
+                            <form id="MyForm" name="MyForm" method="post">
+                                <fieldset>
+                                    <div id="panel">
+                                        <p>What is your favorite sport?</p>
+                                        <input type="radio" name="radio-choice" id="radio-choice-1" value="football" />
+                                        <label for="radio-choice-1" id="test">Football</label>
 
-                                <p>Question 2: What is your favorite music genre? </p>
-                                <form>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="country">Country
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="rock">Rock & Roll
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="pop">Pop
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="rap">Rap
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio">I Don't Like Music
-                                    </label>
-                                </form>
+                                        <input type="radio" name="radio-choice" id="radio-choice-2" value="soccer" />
+                                        <label for="radio-choice-2">Soccer</label>
 
-                                <p>Question 3: Do you like theatre? </p>
-                                <form>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="theatre">Yes
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio">No
-                                    </label>
-                                </form>
+                                        <input type="radio" name="radio-choice" id="radio-choice-3" value="hockey" />
+                                        <label for="radio-choice-3" id="test">Hockey</label>
 
-                                <p>Question 4: What about these kind of events? </p>
-                                <form>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="comedy">Comedy
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="ice shows">Ice Shows
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="casino">Casinos
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optradio" value="food">Food and Drink Tasting
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="family">Family Events Only
-                                    </label>
-                                </form>
-                            </div>
+                                        <input type="radio" name="radio-choice" id="radio-choice-4" value="" />
+                                        <label for="radio-choice-4">I don't like Sports</label>
+                                    </div>
+
+                                    <div id="panel">
+                                        <p>What is your favorite music genre?</p>
+                                        <input type="radio" name="radio-choice" id="radio-choice-1" value="country" />
+                                        <label for="radio-choice-1" id="test">Country</label>
+
+                                        <input type="radio" name="radio-choice" id="radio-choice-2" value="rap" />
+                                        <label for="radio-choice-2">Rap/HipHop</label>
+
+                                        <input type="radio" name="radio-choice" id="radio-choice-3" value="rock" />
+                                        <label for="radio-choice-3" id="test">Rock and Roll</label>
+
+                                        <input type="radio" name="radio-choice" id="radio-choice-4" value="" />
+                                        <label for="radio-choice-4">I don't like music</label>
+                                    </div>
+
+                                    <div id="panel">
+                                        <p>Do you like theatre?</p>
+                                        <input type="radio" name="radio-choice" id="radio-choice-1" value="theatre" />
+                                        <label for="radio-choice-1" id="test">Yes</label>
+
+                                        <input type="radio" name="radio-choice" id="radio-choice-2" value="" />
+                                        <label for="radio-choice-2">No</label>
+                                    </div>
+
+                                    <div id="panel">
+                                        <p>What about these events?</p>
+                                        <input type="radio" name="radio-choice" id="radio-choice-1" value="comedy" />
+                                        <label for="radio-choice-1" id="test">Comedy</label>
+
+                                        <input type="radio" name="radio-choice" id="radio-choice-2" value="ice show" />
+                                        <label for="radio-choice-2">Ice Show</label>
+
+                                        <input type="radio" name="radio-choice" id="radio-choice-3" value="food" />
+                                        <label for="radio-choice-3" id="test">Food Tastings</label>
+
+                                        <input type="radio" name="radio-choice" id="radio-choice-4" value="family" />
+                                        <label for="radio-choice-4">Family Events</label>
+                                    </div>
+
+                                    <div id="result">
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
                         <div class="panel-footer">
                             <button class="btn btn-primary" type="button"  id="submitsurvey">Submit</button>
@@ -119,6 +111,17 @@
         </div>
   </div>
 </div>
+
+<script>
+    var choices = [];
+    $(function() {
+        $('input[type="radio"]').change(function() {
+            var surveyResult = this.value;
+            choices += surveyResult + ", ";
+            console.log(choices);
+        });
+    });
+</script>
 
 
 <style type="text/css">
