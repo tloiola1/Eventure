@@ -10,7 +10,14 @@ exports.signin = function (req, res) {
 
 exports.guest = function (req, res) {
     res.render("guest");
-    console.log("New User");
+};
+
+exports.events = function (req, res) {
+    res.render("eventsToAttend")
+};
+
+exports.profile = function (req, res) {
+    res.render("profile");
 };
 
 exports.logout = function(req,res){
