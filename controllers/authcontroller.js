@@ -12,6 +12,10 @@ exports.guest = function (req, res) {
     res.render("guest");
 };
 
+exports.events = function (req, res) {
+    res.render("eventsToAttend")
+};
+
 exports.profile = function (req, res) {
     res.render("profile");
 };
