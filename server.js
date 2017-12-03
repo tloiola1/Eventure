@@ -21,7 +21,7 @@ var expHbs = require('express-handlebars');
 
 
 
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 //  For Body Parser
 app.use(bodyParser());

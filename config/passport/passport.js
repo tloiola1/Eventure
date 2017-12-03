@@ -1,6 +1,7 @@
 var bCrypt = require("bcrypt-nodejs");
 
 module.exports = function (passport, user) {
+    var userInfo;
     var User = user;
     var LocalStrategy = require("passport-local").Strategy;
 
@@ -74,7 +75,8 @@ module.exports = function (passport, user) {
                 if (!isValidPassword(user.password,password)) {
                     return done(null, false, { message: 'Incorrect password.' });
                 }
-                var userInfo = user.get();
+                userInfo = user.get();
+                console.log(userInfo);
 
                 return done(null, userInfo);
             }).catch(function (err) {

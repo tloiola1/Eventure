@@ -67,6 +67,7 @@ module.exports = function(app) {
     
     db.events.findAll({
 
+
     })
     .then(function(dbEvents){
       res.render("eventsToAttend", {events: dbEvents});
@@ -153,5 +154,7 @@ module.exports = function(app) {
 			console.log('body:', body); // Print the HTML for the Google homepage.
             res.json(body);
 		});
-	});
+	}); //  ticketmaster close
+
+    app.get('/')
 };
