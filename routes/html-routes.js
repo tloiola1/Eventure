@@ -12,10 +12,6 @@ module.exports = function(app) {
     res.render('index');
   });
 
-  app.get("/eventsToHost", function(req, res) {
-    res.render("eventsToHost");
-  });
-
   app.get("/eventsToAttend", function(req, res) {
     res.render("eventsToAttend");
   });
