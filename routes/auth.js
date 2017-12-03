@@ -11,7 +11,6 @@ module.exports = function (app, passport) {
     app.get("/signup", authController.signup);
     //  next is function(req, res)......
     app.get("/", isLoggedIn, function(req, res) { res.redirect('/eventsToAttend')});
-    app.get("/guest", isLoggedIn, authController.guest);
 
     //  where redirect when signup success???? Also change below if different
     app.post("/signup", passport.authenticate("local-signup", {
@@ -19,6 +18,8 @@ module.exports = function (app, passport) {
         failureRedirect: "/signup"
         }
     ));
+
+    app.get("/guest", isLoggedIn, authController.guest);
 
     app.get("/profile", isLoggedIn, authController.profile);
 
