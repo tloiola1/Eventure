@@ -8,9 +8,14 @@ $.get("/profile/" + email, function (data) {
     console.log(data);
     name = data.name;
     dob = data.dob;
+    //  Capitlize the name if its nots allready done so
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    name = capitalize(name);
+    $("#profile-name").text(name);
+
 });
-
-
 
 
 

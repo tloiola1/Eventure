@@ -176,7 +176,6 @@ module.exports = function(app) {
                 email: req.params.email
             }
         }).then(function (user) {
-            console.log("ANSWERS : " + user);
             res.json(user);
         })
 
