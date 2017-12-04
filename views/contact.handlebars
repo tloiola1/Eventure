@@ -1,18 +1,17 @@
 <row>
     <div class="container col-sm-offset-3 col-sm-6 col-sm-offset-3">
-        <h3>Please Leave Any Comments Here!</h3>
-        <div class="form-group">
-            <label for="usr">Name</label>
-            <input type="text" class="form-control" id="usr">
-        </div>
-        <form>
-            <div class="form-group">
-                <label for="comment">Comment</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
-            </div>
+        <h2>Send e-mail to the develoupers:</h2>
+
+        <form action="mailto:soccerkid94.17@gmail.com" method="post" enctype="text/plain">
+            Name:<br>
+            <input type="text" name="name"><br>
+            E-mail:<br>
+            <input type="text" name="mail"><br>
+            Comment:<br>
+            <input type="text" name="comment" size="50"><br><br>
+            <input type="submit" value="Send">
+            <input type="reset" value="Reset">
         </form>
-        <h6>Thank you!</h6>
-        <button type="button" class="btn btn-success">Send</button>
     </div>
 </row>
 
