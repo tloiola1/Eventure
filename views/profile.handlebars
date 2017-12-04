@@ -1,51 +1,95 @@
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<div class="container">
-    <div class="fb-profile">
-        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" />
-        <img class="fb-image-profile thumbnail" src="http://www.fogosglobo.com.br/img/250x250-circle.png" />
-        <div class="fb-profile-text">
-            <h1 id="profile-name" > </h1>
-            <p>Girls just wanna go fun.</p>
+
+<!--<div class="container">-->
+    <!--<div class="fb-profile">-->
+        <!--<img align="left" id="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" /> <br>-->
+        <!--<img id="pro" src="http://www.fogosglobo.com.br/img/250x250-circle.png" />-->
+        <!--<div class="fb-profile-text">-->
+            <!--<h1 id="profile-name" > </h1>-->
+            <!--<p>  </p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>               &lt;!&ndash; /container &ndash;&gt;-->
+
+<nav class="navbar navbar-inverse nav-center">
+    <div class="container-fluid">
+        <!--<div class="navbar-header">-->
+            <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
+        <!--</div>-->
+        <ul class="nav">
+            <li><a href="/eventsToAttend">Your Events</a></li>
+            <!--<li class="navbar-header">-->
+                <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
+            <!--</li>-->
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div>
+    <div class="large-image" >
+        <img id="back" src="http://lorempixel.com/850/280/nightlife/5/" />
+        <div id="personal-image" class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+            <img id="myImage" src="http://www.fogosglobo.com.br/img/250x250-circle.png" />
         </div>
     </div>
-</div> <!-- /container -->
+    <div class="container">
+        <!--EVENT THE GUEST IS BEST MATCHED TOO-->
+        <div class="container col-sm-8 left">
+            <h1>This event is best suited for you!</h1>
+            <div class="panel panel-default col-sm-offset-1 col-sm-8 col-sm-offset-2">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+        </div>
+        <!--SIMILAR EVENTS TO THE BEST EVENT-->
+        <div class="container col-sm-offset-1 col-sm-3 right">
+            <h1>Other Events</h1>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Basic panel example
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="./assets/js/profile.js"> </script>
 
 <style type="text/css" >
-
-    body
-    {
-        font-family: 'Open Sans', sans-serif;
+    body {
+        /*background-image: url("./assets/images/welcomebackground.jpg");*/
+        background: #63ead1;
     }
 
-    .fb-profile img.fb-image-lg{
-        z-index: 0;
-        width: 100%;
-        margin-bottom: 10px;
+    .large-image {
+        text-align: center;
+        margin: 1%;
     }
 
-    .fb-image-profile
-    {
-        margin: -90px 10px 0px 50px;
-        z-index: 9;
-        width: 20%;
+    #back {
+        width: 85%;
+        height: 60%;
     }
 
-    @media (max-width:768px)
-    {
-
-        .fb-profile-text>h1{
-            font-weight: 700;
-            font-size:16px;
-        }
-
-        .fb-image-profile
-        {
-            margin: -45px 10px 0px 25px;
-            z-index: 9;
-            width: 20%;
-        }
+    #myImage {
+        height: 65% !important;
+        width: 65% !important;
+        text-align: center;
+        margin: -50% 15% 15% 15%;
     }
+
+    nav.nav-center ul {
+        text-align: center;
+    }
+    nav.nav-center ul li {
+        display: inline-block;
+        float: none;
+    }
+
 </style>
 

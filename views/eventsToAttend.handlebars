@@ -47,7 +47,9 @@
 //                    data:user,
                     dataType: "json",
                     success: function(json) {
-                        console.log(json);
+                        var hola = JSON.parse(json);
+                        console.log(hola);
+                        console.log(hola._embedded.events);
                         // Parse the response.
                         // Do other things.
                     },
