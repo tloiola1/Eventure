@@ -17,46 +17,39 @@
         <!--</div>-->
         <ul class="nav">
             <li><a href="/eventsToAttend">Your Events</a></li>
-            <!--<li class="navbar-header">-->
-                <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-            <!--</li>-->
             <li><a href="#">Contact Us</a></li>
         </ul>
     </div>
 </nav>
 
 <div>
-    <div class="large-image" >
-        <img id="back" src="http://lorempixel.com/850/280/nightlife/5/" />
+    <div class="images-holder" >
+        <img id="background-personal" src="./assets/images/profile-back.jpg" />
         <div id="personal-image" class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
             <img id="myImage" src="http://www.fogosglobo.com.br/img/250x250-circle.png" />
         </div>
     </div>
     <div class="container">
-        <!--EVENT THE GUEST IS BEST MATCHED TOO-->
-        <div class="container col-sm-8 left">
-            <h1>This event is best suited for you!</h1>
-            <div class="panel panel-default col-sm-offset-1 col-sm-8 col-sm-offset-2">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Panel title</h3>
-                </div>
-                <div class="panel-body">
-                    Panel content
+        <div class="col-sm-offset-1 col-sm-6 left">
+            <div class="well well-sm">
+                    <h3 id="profile-name" > </h3>
+                <div>
+                    <h5 id="dob"> DOB </h5>
                 </div>
             </div>
         </div>
-        <!--SIMILAR EVENTS TO THE BEST EVENT-->
-        <div class="container col-sm-offset-1 col-sm-3 right">
-            <h1>Other Events</h1>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    Basic panel example
+
+        <div class=" col-sm-4">
+            <div class="well right">
+                <div id="all-buttons">
+                    <button></button>
+                    <button></button>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
-
 
 <script src="./assets/js/profile.js"> </script>
 
@@ -66,14 +59,16 @@
         background: #63ead1;
     }
 
-    .large-image {
+    .images-holder {
         text-align: center;
         margin: 1%;
     }
 
-    #back {
-        width: 85%;
-        height: 60%;
+    #background-personal {
+        width: 1100px;
+        height: 400px;
+        max-width: 90%;
+        max-height: 70%;
     }
 
     #myImage {
@@ -81,6 +76,10 @@
         width: 65% !important;
         text-align: center;
         margin: -50% 15% 15% 15%;
+    }
+
+    #profile-name {
+        text-align: center;
     }
 
     nav.nav-center ul {
