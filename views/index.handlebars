@@ -47,6 +47,7 @@
 
 <script>
     $(document).ready(function(){
+        localStorage.clear();
         $(document).on('submit', function () {
             var email = $("#username").val().trim();
             localStorage.setItem("email", email);
