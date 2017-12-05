@@ -1,10 +1,12 @@
 <div class="container col-sm-12">
-    <img src="../assets/images/jeff-brown-246388.jpg">
+    <img src="../assets/images/jeff-brown-246388.jpg" style="width: 100%; height:auto">
 
     <row>
-        <h1>Eventure</h1>
-        <h5>The cure for lonely Friday Nights!</h5>
-        <h5>Find events you would be interested in and meet people interesting!</h5>
+        <div class="container col-sm-12">
+            <h1>Eventure</h1>
+            <h5>The cure for lonely Friday Nights!</h5>
+            <h5>Find events you would be interested in and meet people interesting!</h5>
+        </div>
     </row>
 
     <div class="container">
@@ -26,7 +28,7 @@
 
                         <form role="form" id="signup" method="post" action="signup">
                                 <div class="form-group">
-                                    <label for="email">Email Address</label>
+                                    <label for="email">Email</label>
                                     <input class="form-control" name="email" type="email" placeholder="johnDoe@email.com"/>
                                 </div>
                                 <div class="form-group">
@@ -50,12 +52,17 @@
     </div>
 </div>
 
-<!--<script>-->
-    <!--$(document).ready(function(){-->
-        <!--$("#guestbttn").click(function(){-->
-            <!--$("#guestmodal").modal();-->
-        <!--});-->
-    <!--});-->
+<script>
+    localStorage.clear();
+    $(document).ready(function () {
+        localStorage.clear();
+        $(document).on('submit', function () {
+            var email = $("#username").val().trim();
+            localStorage.setItem("email", email);
+            console.log(localStorage.getItem("email"));
+        });
+    });
+
 </script>
 
 <style type="text/css">
