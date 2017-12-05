@@ -2,6 +2,7 @@
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
 var request = require('request');
+
 // Dependencies
 // =============================================================
 
@@ -154,6 +155,8 @@ module.exports = function(app) {
     app.get('/ticketmaster/:survey', function (req, res) {
         var thatone;
         var makeArray = new Array();
+        var wholeBody = [];
+        var newBody;
         db.users.findOne({
             where: {
                 email: req.params.survey
@@ -165,14 +168,39 @@ module.exports = function(app) {
             makeArray = thatone.split(",");
             console.log("Array???", makeArray);
 
+        // request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=' + thatone, function (error, response, body) {
+        //     console.log('error:', error); // Print the error if one occurred
+        //     console.log('statusCode:', response.statusCode); // Print the response status code if a response was received
+        //     newBody = JSON.parse(body);
+        //     res.json(newBody);
+        // }); // request close
 
-        request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=' + thatone, function (error, response, body) {
-            console.log('error:', error); // Print the error if one occurred
-            console.log('statusCode:', response.statusCode); // Print the response status code if a response was received
-            var newBody = JSON.parse(body);
-            res.json(newBody);
-        });
-        });
+            var requestMe = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=";
+            var allReq=[];
+
+            for (var i = 0; i < makeArray.length; i++) {
+                allReq.push(requestMe + makeArray[i]);
+            }
+            console.log(allReq);
+
+            function httpGet(url, callback) {
+                var options = {
+                    url: url,
+                    json: true
+                };
+                request(options,
+                    function (err, res, body) {
+                        callback(err, body);
+                    });
+            } // httpGet Close
+            var async = require("async");
+            async.map(allReq, httpGet, function (err, resp) {
+                if (err) return console.log(err);
+                console.log("RESP: ", resp);
+                console.log("RES: ", res);
+                res.json(resp);
+            });
+        }); // then function close
     }); //ticketmaster close
 
     app.get('/profile/:email', function (req, res) {
