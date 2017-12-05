@@ -155,8 +155,6 @@ module.exports = function(app) {
     app.get('/ticketmaster/:survey', function (req, res) {
         var thatone;
         var makeArray = new Array();
-        var wholeBody = [];
-        var newBody;
         db.users.findOne({
             where: {
                 email: req.params.survey
@@ -197,7 +195,6 @@ module.exports = function(app) {
             async.map(allReq, httpGet, function (err, resp) {
                 if (err) return console.log(err);
                 console.log("RESP: ", resp);
-                console.log("RES: ", res);
                 res.json(resp);
             });
         }); // then function close
