@@ -181,17 +181,23 @@ module.exports = function(app) {
     });
 
     app.put("/api/survey/:email", function (req, res) {
-        console.log(req.body);
-        db.users.update(req.body.survey,
+        var useremail = req.params.email;
+        var userchoices = req.body;
+        console.log(useremail);
+        console.log("choice", userchoices);
+
+        db.users.update({
+                survey: req.body.choices
+            },
             {
                 where: {
                     email: req.params.email
                 }
             })
-            .then(function (surveydb, testing) {
+            .then(function (result) {
                 // testing = testing
 
-                res.redirect("/eventsToAttend");
+                // res.redirect("/eventsToAttend");
 
                 // console.log("survey log", user.survey);
                 // console.log("email log", req.params.email);

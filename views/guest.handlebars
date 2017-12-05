@@ -129,11 +129,13 @@
     </div>
 </div>
 
-    <button id="complete"> SUBMIT </button>
+    <a id="complete" href="/eventsToAttend"> SUBMIT </a>
 
 <script>
     var choices = [];
+    var theData = "";
     var email = localStorage.getItem("email");
+    console.log(email);
 
 //    function checkValid() {
 //        var validate = true;
@@ -159,18 +161,31 @@
         });
     });
 
+    function convert(data) {
+        for (var i =0; i < data.length; i++) {
+            theData += data[i] + "+";
+        }
+    }
+
 
 
     $("#complete").on("click", function () {
+        convert(choices);
+        var sendData = {
+            choices: theData
+        };
+
         $.ajax({
-            type: "PUT",
+            method: "PUT",
             url: "/api/survey/" + email,
 //            dateType: "json",
-            data: choices,
-            success: function (json) {
-//                var userInfo = json;
-                console.log(json);
-            }
+            data: sendData
+//            success: function (json) {
+////                var userInfo = json;
+//                console.log(json);
+//            }
+        }).then(function () {
+//            location.href =
         })
 
 
