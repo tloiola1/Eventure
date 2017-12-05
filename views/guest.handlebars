@@ -129,7 +129,7 @@
     </div>
 </div>
 
-    <a id="complete" href="/eventsToAttend"> SUBMIT </a>
+    <a id="complete" href="/eventsToAttend"><button> SUBMIT </button></a>
 
 <script>
     var choices = [];
@@ -138,19 +138,16 @@
     var email = localStorage.getItem("email");
     console.log(email);
 
-//    function checkValid() {
-//        var validate = true;
-//
-////                check choices are valid
-//        $(".choices").each(function () {
-//            if($(this).val() === "") {
-//                validate = false;
-//            }
-//        });
-//        return validate;
-//    }
+    $("#submitsurvey").on("click", function () {
+//        toggle the survey to collapse on click by removing class
+        $("#collapse1").removeClass("in");
+        $("#collapse2").addClass("in")
+    });
 
-//    var q1 = $("#q1").val();
+    $("#submitpicture").on("click", function () {
+        $("#collapse2").removeClass("in");
+    });
+
     $(function() {
         $('input[type="radio"]').change(function() {
             var surveyResult = this.value;
@@ -260,6 +257,13 @@
 
     #canvas{
         display: none;
+    }
+
+    #complete{
+        color: black;
+        margin-top: 10px;
+        display: table;
+        margin: auto;
     }
 
     /*.panel-default > .panel-heading {*/
