@@ -180,8 +180,9 @@ module.exports = function(app) {
         })
     });
 
-    app.put("/api/survey/:email:testing", function (req, res) {
-        db.users.update(req.body,
+    app.put("/api/survey/:email", function (req, res) {
+        console.log(req.body);
+        db.users.update(req.body.survey,
             {
                 where: {
                     email: req.params.email
@@ -190,11 +191,7 @@ module.exports = function(app) {
             .then(function (surveydb, testing) {
                 // testing = testing
 
-
-
                 res.redirect("/eventsToAttend");
-
-
 
                 // console.log("survey log", user.survey);
                 // console.log("email log", req.params.email);
