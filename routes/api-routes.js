@@ -161,12 +161,12 @@ module.exports = function(app) {
             console.log("ANWERS FIRST: " + answer.survey);
             thatone = answer.survey;
 
-            request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=' + thatone, function (error, response, body) {
-                console.log('error:', error); // Print the error if one occurred
-                console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-                console.log('body:', body); // Print the HTML for the Google homepage.
-                res.json(body);
-            });
+        request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=' + thatone, function (error, response, body) {
+            console.log('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response.statusCode); // Print the response status code if a response was received
+            var newBody = JSON.parse(body);
+            res.json(newBody);
+        });
         });
     }); //ticketmaster close
 
@@ -178,7 +178,26 @@ module.exports = function(app) {
         }).then(function (user) {
             res.json(user);
         })
-
-
     });
+
+    app.put("/api/survey/:email", function (req, res) {
+        console.log(req.body);
+        db.users.update(req.body.survey,
+            {
+                where: {
+                    email: req.params.email
+                }
+            })
+            .then(function (surveydb, testing) {
+                // testing = testing
+
+                res.redirect("/eventsToAttend");
+
+                // console.log("survey log", user.survey);
+                // console.log("email log", req.params.email);
+                // console.log("testing log",  req.params.testing);
+            })
+    })
+
+
 };

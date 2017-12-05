@@ -1,5 +1,14 @@
 <div class="container col-sm-12">
     <img src="../assets/images/cesar-couto-420986.jpg">
+              <div class="row">
+            <div class=" col-sm-12 profile">
+                    <img src="../assets/images/cesar-couto-420986.jpg" alt="userImage">
+                    <a id="colorGold" class="User" href="/profile">User Name</a>
+                    <span id="colorGold"> | </span>
+                    <a id="colorGold" class="logout" href="/logout">Log Out</a>
+                </div>
+            </div>
+
 
     <div class="container col-sm-12">
         <!--EVENT THE GUEST IS BEST MATCHED TOO-->
@@ -11,16 +20,15 @@
                 </div>
                 <div class="panel-body">
                     Panel content
+                    
                 </div>
             </div>
-        </div>
-        <!--SIMILAR EVENTS TO THE BEST EVENT-->
-        <div class="container col-sm-offset-1 col-sm-3 right">
-            <h1>Other Events</h1>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    Basic panel example
-                </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <!--EVENT THE GUEST IS BEST MATCHED TOO-->
+            <div class="text-center">
+                <h1 class="col-sm-12 jumbotron eventsForYou">Events for You<hr></h1>
+                <div class="mainSection"></div>
             </div>
         </div>
     </div>
@@ -59,9 +67,24 @@
 //                    data:user,
                     dataType: "json",
                     success: function(json) {
-                        var hola = JSON.parse(json);
-                        console.log(hola);
-                        console.log(hola._embedded.events);
+                        
+                        console.log(json.length);
+                      
+                            for (var i = 0; i < 4; i++) {
+                                var box =   `<div class="col-sm-3">
+                                                <div class="thumbnail">
+                                                    <span style="position: absolute; left: 10%; font-weight: bold">`+ json._embedded.events[i]._embedded.venues[0].name +`</span>
+                                                    <img src="`+ json._embedded.events[i]._embedded.venues[0].images[0].url +`" alt="image">
+                                                    <div class="caption">
+                                                        <h3>`+ json._embedded.events[i].name +`</h3><hr>
+                                                        <p>`+ json._embedded.events[i].dates.start.localDate +`</p>
+                                                        <p>`+ json._embedded.events[i]._embedded.venues[0].boxOfficeInfo.phoneNumberDetail +`</p>
+                                                        <p><a href="`+ json._embedded.events[i].url +`" class="btn btn-success " role="button" style="width: 100%" target="_blank">Get Your Ticket Now!</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                                $(".mainSection").append(box);
+                            }
                         // Parse the response.
                         // Do other things.
                     },
@@ -73,21 +96,34 @@
 
 </script>
 
-<style type="text/css">
-    img{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        height: 100vh;
-        width: 100vw;
+<style>
+    body{
+        background-image: url("../assets/images/cesar-couto-420986.jpg");
+        background-size: cover;
+    }
+    .profile img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    #event{
+        width: 100%;
     }
 
-    .left{
-        text-align: center;
+    footer{
+        color: transparent !important;
     }
 
-    .right{
-        text-align: center;
+    #colorGold{
+        color: gold;
     }
+    .container{
+        width: 90%;
+    }
+    .profile{
+        text-align: right;
+        position: relative;
+        padding: 5px 30px 0 30px;
+    }
+
 </style>

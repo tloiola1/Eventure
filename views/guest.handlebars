@@ -1,4 +1,5 @@
 <div class="container-fluid col-sm-12">
+
     <img src="../assets/images/frank-mckenna-150516.jpg">
 
     <div class="container">
@@ -15,8 +16,9 @@
                         </div>
                         <div id="collapse1" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <form id="MyForm" name="MyForm" method="post">
+                                <form id="MyForm" name="MyForm">
                                     <fieldset>
+                                        <form name="form1" id="q1">
                                         <div id="panel">
                                             <p>What is your favorite sport?</p>
                                             <input type="radio" name="radio-choice" id="radio-choice-1" value="football" />
@@ -31,7 +33,8 @@
                                             <input type="radio" name="radio-choice" id="radio-choice-4" value="" />
                                             <label for="radio-choice-4">I don't like Sports</label>
                                         </div>
-
+                                        </form>
+                                        <form>
                                         <div id="panel">
                                             <p>What is your favorite music genre?</p>
                                             <input type="radio" name="radio-choice" id="radio-choice-1" value="country" />
@@ -46,7 +49,9 @@
                                             <input type="radio" name="radio-choice" id="radio-choice-4" value="" />
                                             <label for="radio-choice-4">I don't like music</label>
                                         </div>
+                                        </form>
 
+                                        <form>
                                         <div id="panel">
                                             <p>Do you like theatre?</p>
                                             <input type="radio" name="radio-choice" id="radio-choice-1" value="theatre" />
@@ -55,7 +60,9 @@
                                             <input type="radio" name="radio-choice" id="radio-choice-2" value="" />
                                             <label for="radio-choice-2">No</label>
                                         </div>
+                                        </form>
 
+                                        <form>
                                         <div id="panel">
                                             <p>What about these events?</p>
                                             <input type="radio" name="radio-choice" id="radio-choice-1" value="comedy" />
@@ -70,9 +77,7 @@
                                             <input type="radio" name="radio-choice" id="radio-choice-4" value="family" />
                                             <label for="radio-choice-4">Family Events</label>
                                         </div>
-
-                                        <div id="result">
-                                        </div>
+                                        </form>
                                     </fieldset>
                                 </form>
                             </div>
@@ -111,7 +116,6 @@
                 </div>
             </div>
         </div>
-
         <nav class="navbar navbar-fixed-bottom" id="footer">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
@@ -121,11 +125,29 @@
                 </ul>
             </div>
         </nav>
+
     </div>
 </div>
 
+    <button id="complete"> SUBMIT </button>
+
 <script>
     var choices = [];
+    var email = localStorage.getItem("email");
+
+//    function checkValid() {
+//        var validate = true;
+//
+////                check choices are valid
+//        $(".choices").each(function () {
+//            if($(this).val() === "") {
+//                validate = false;
+//            }
+//        });
+//        return validate;
+//    }
+
+//    var q1 = $("#q1").val();
     $(function() {
         $('input[type="radio"]').change(function() {
             var surveyResult = this.value;
@@ -136,6 +158,27 @@
             console.log("array length is " + choices.length);
         });
     });
+
+
+
+    $("#complete").on("click", function () {
+        $.ajax({
+            type: "PUT",
+            url: "/api/survey/" + email,
+//            dateType: "json",
+            data: choices,
+            success: function (json) {
+//                var userInfo = json;
+                console.log(json);
+            }
+        })
+
+
+    });
+
+
+
+
 </script>
 
 
@@ -209,7 +252,7 @@
     }
 
     /*.panel-default > .panel-heading {*/
-        /*background-color: transparent;*/
+    /*background-color: transparent;*/
     /*}*/
 
 
