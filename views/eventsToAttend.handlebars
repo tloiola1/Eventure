@@ -73,7 +73,8 @@
 
                             for (var j = 0; j < json.length; j++) {
                                 for (var i = 0; i < 4; i++) {
-                                    var box =   `<div class="col-sm-3">
+                                    if (json[j]._embedded.events[i]._embedded.venues[0].boxOfficeInfo !== undefined) {
+                                        var box =   `<div class="col-sm-3">
                                                 <div class="thumbnail">
                                                     <span style="position: absolute; left: 10%; font-weight: bold">`+ json[j]._embedded.events[i]._embedded.venues[0].name +`</span>
                                                     <img src="`+ json[j]._embedded.events[i]._embedded.venues[0].images[0].url +`" alt="image">
@@ -85,7 +86,22 @@
                                                     </div>
                                                 </div>
                                             </div>`;
-                                    $(".mainSection").append(box);
+                                        $(".mainSection").append(box);
+                                    } else if(json[j]._embedded.events[i]._embedded.venues[0].images[0].url !== undefined) {
+                                        var box = `<div class="col-sm-3">
+                                                <div class="thumbnail">
+                                                    <span style="position: absolute; left: 10%; font-weight: bold">`+ json[j]._embedded.events[i]._embedded.venues[0].name +`</span>
+                                                    <img src="`+ json[j]._embedded.events[i]._embedded.venues[0].images[0].url +`" alt="image">
+                                                    <div class="caption">
+                                                        <h3>`+ json[j]._embedded.events[i].name +`</h3><hr>
+                                                        <p>`+ json[j]._embedded.events[i].dates.start.localDate +`</p>
+                                                        <p><a href="`+ json[j]._embedded.events[i].url +`" class="btn btn-success " role="button" style="width: 100%" target="_blank">Get Your Ticket Now!</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                                        $(".mainSection").append(box);
+
+                                    }
                                 }
                             }
                         // Parse the response.
