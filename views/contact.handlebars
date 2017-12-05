@@ -6,24 +6,62 @@
             <label class="col-sm-12">
                 Name:
                 <br>
-                <input type="text" name="name">
+                <input type="text" name="name" id="name" class="validate">
             </label>
             <br>
             <label class="col-sm-12">
                 E-mail:
                 <br>
-                <input type="text" name="mail">
+                <input type="text" name="email" id="email" class="validate">
             </label>
             <br>
             <label class="col-sm-12">
                 Comment:
                 <br>
-                <textarea type="text" name="comment" size="50" rows="6"></textarea><br><br>
+                <textarea type="text" name="comment" size="50" rows="6" id="comment" class="validate"></textarea><br><br>
             </label>
-            <input type="submit" value="Send">
+            <input type="submit" value="Send" id="send" href="/logout">
             <input type="reset" value="Reset">
         </form>
     </div>
+
+<script type="text/javascript">
+
+    $("#send").on("click", function(){
+        if(checkValid() === true){
+            var name = $("#name").val().trim();
+            var email = $("#email").val().trim();
+            var comment = $("#comment").val().trim();
+            var contact = {
+                name,
+                email,
+                comment
+            }
+
+            $.ajax({
+                url: "/api/contact",
+                method: "POST",
+                data: contact
+            }).then(function(answer){
+                console.log(answer);
+            })
+        }
+        else{
+            return false;
+        }
+
+    });
+    function checkValid() {
+     var validate = true;
+//                check name and photo validate
+        $(".validate").each(function () {
+            if ($(this).val() === "") {
+                validate = false;
+            }
+        });
+        return validate;
+    };
+</script>
 
 <style type="text/css">
     body{
