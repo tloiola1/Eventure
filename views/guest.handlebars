@@ -133,7 +133,8 @@
 
 <script>
     var choices = [];
-    var theData = "";
+    var theData;
+    var check;
     var email = localStorage.getItem("email");
     console.log(email);
 
@@ -155,22 +156,17 @@
             var surveyResult = this.value;
 
             choices.push(surveyResult);
-            console.log(choices);
-            console.log("position 0 is: " + choices[0]);
-            console.log("array length is " + choices.length);
+//            convert array to string for database
+            theData = choices.toString();
         });
     });
 
-    function convert(data) {
-        for (var i =0; i < data.length; i++) {
-            theData += data[i] + "+";
-        }
-    }
+
 
 
 
     $("#complete").on("click", function () {
-        convert(choices);
+//        send data as an object for ajax call
         var sendData = {
             choices: theData
         };
