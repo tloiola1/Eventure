@@ -1,4 +1,5 @@
-<div class="container col-sm-12">
+<div class="container-fluid col-sm-12">
+
     <img src="../assets/images/frank-mckenna-150516.jpg">
 
     <div class="container">
@@ -77,7 +78,6 @@
                                             <label for="radio-choice-4">Family Events</label>
                                         </div>
                                         </form>
-
                                     </fieldset>
                                 </form>
                             </div>
@@ -116,14 +116,27 @@
                 </div>
             </div>
         </div>
+        <nav class="navbar navbar-fixed-bottom" id="footer">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <a href="/api/events/all" target="_blank" id="apilink">API Events List | </a>
+                    <a href="/api/users/all"  target="_blank" id="apilink"> API Users List | </a>
+                    <a href="/contact" target="_blank" id="devbttn"> Complain to the Devs</a>
+                </ul>
+            </div>
+        </nav>
+
     </div>
 </div>
 
-    <button id="complete"> SUBMIT </button>
+    <a id="complete" href="/eventsToAttend"> SUBMIT </a>
 
 <script>
     var choices = [];
+    var theData;
+    var check;
     var email = localStorage.getItem("email");
+    console.log(email);
 
 //    function checkValid() {
 //        var validate = true;
@@ -143,24 +156,32 @@
             var surveyResult = this.value;
 
             choices.push(surveyResult);
-            console.log(choices);
-//            console.log("position 0 is: " + choices[0]);
-//            dupcheck(surveyResult, choices);
+//            convert array to string for database
+            theData = choices.toString();
         });
     });
 
 
 
+
+
     $("#complete").on("click", function () {
+//        send data as an object for ajax call
+        var sendData = {
+            choices: theData
+        };
+
         $.ajax({
-            type: "PUT",
+            method: "PUT",
             url: "/api/survey/" + email,
 //            dateType: "json",
-            data: choices,
-            success: function (json) {
-//                var userInfo = json;
-                console.log(json);
-            }
+            data: sendData
+//            success: function (json) {
+////                var userInfo = json;
+//                console.log(json);
+//            }
+        }).then(function () {
+//            location.href =
         })
 
 
