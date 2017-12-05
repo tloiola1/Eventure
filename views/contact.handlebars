@@ -1,23 +1,39 @@
-<row>
+{{!-- Tarciso Changes from here Everyhitng was kept just format was added keep if you like--}}
     <div class="container col-sm-offset-3 col-sm-6 col-sm-offset-3">
-        <h2>Send e-mail to the develoupers:</h2>
+        <h1>Send e-mail to the developers:</h1>
 
         <form action="mailto:soccerkid94.17@gmail.com" method="post" enctype="text/plain">
-            Name:<br>
-            <input type="text" name="name"><br>
-            E-mail:<br>
-            <input type="text" name="mail"><br>
-            Comment:<br>
-            <input type="text" name="comment" size="50"><br><br>
+            <label class="col-sm-12">
+                Name:
+                <br>
+                <input type="text" name="name">
+            </label>
+            <br>
+            <label class="col-sm-12">
+                E-mail:
+                <br>
+                <input type="text" name="mail">
+            </label>
+            <br>
+            <label class="col-sm-12">
+                Comment:
+                <br>
+                <textarea type="text" name="comment" size="50" rows="6"></textarea><br><br>
+            </label>
             <input type="submit" value="Send">
             <input type="reset" value="Reset">
         </form>
     </div>
-</row>
-
 <style type="text/css">
     body{
         background-color: cornsilk;
         text-align: center;
     }
+    input{
+        width: inherit;
+    }
+    textarea{
+        width: inherit
+    }
 </style>
+{{!-- Tarciso changes to here --}}
