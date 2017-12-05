@@ -1,10 +1,26 @@
-    <div class="container">
-        <div class="row">
+<div class="container col-sm-12">
+    <img src="../assets/images/cesar-couto-420986.jpg">
+              <div class="row">
             <div class=" col-sm-12 profile">
                     <img src="../assets/images/cesar-couto-420986.jpg" alt="userImage">
                     <a id="colorGold" class="User" href="/profile">User Name</a>
                     <span id="colorGold"> | </span>
                     <a id="colorGold" class="logout" href="/logout">Log Out</a>
+                </div>
+            </div>
+
+
+    <div class="container col-sm-12">
+        <!--EVENT THE GUEST IS BEST MATCHED TOO-->
+        <div class="container col-sm-8 left">
+            <h1>This event is best suited for you!</h1>
+            <div class="panel panel-default col-sm-offset-2 col-sm-8 col-sm-offset-2">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                    
                 </div>
             </div>
         <!-- </div> -->
@@ -17,7 +33,18 @@
         </div>
     </div>
 
-    <script>
+    <nav class="navbar navbar-fixed-bottom" id="footer">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <a href="/api/events/all" target="_blank" id="apilink">API Events List | </a>
+                <a href="/api/users/all"  target="_blank" id="apilink"> API Users List | </a>
+                <a href="/contact" target="_blank" id="devbttn"> Complain to the Devs</a>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<script>
     console.log(localStorage.getItem("email"));
     var email = localStorage.getItem("email");
     var user = {
@@ -67,7 +94,7 @@
                 });
 //                });
 
-    </script>
+</script>
 
 <style>
     body{
