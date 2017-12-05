@@ -29,7 +29,7 @@
                         <form role="form" id="signup" method="post" action="signup">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input class="form-control" name="email" type="email" placeholder="johnDoe@email.com"/>
+                                    <input class="form-control" name="email" type="email" id="username" placeholder="johnDoe@email.com"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Name</label>
@@ -55,7 +55,6 @@
 <script>
     localStorage.clear();
     $(document).ready(function () {
-        localStorage.clear();
         $(document).on('submit', function () {
             var email = $("#username").val().trim();
             localStorage.setItem("email", email);
