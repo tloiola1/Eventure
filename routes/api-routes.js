@@ -178,7 +178,29 @@ module.exports = function(app) {
         }).then(function (user) {
             res.json(user);
         })
-
-
     });
+
+    app.put("/api/survey/:email:testing", function (req, res) {
+        db.users.update(req.body,
+            {
+                where: {
+                    email: req.params.email
+                }
+            })
+            .then(function (surveydb, testing) {
+                // testing = testing
+
+
+
+                res.redirect("/eventsToAttend");
+
+
+
+                // console.log("survey log", user.survey);
+                // console.log("email log", req.params.email);
+                // console.log("testing log",  req.params.testing);
+            })
+    })
+
+
 };
