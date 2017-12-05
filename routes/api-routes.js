@@ -161,12 +161,12 @@ module.exports = function(app) {
             console.log("ANWERS FIRST: " + answer.survey);
             thatone = answer.survey;
 
-            request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=' + thatone, function (error, response, body) {
-                console.log('error:', error); // Print the error if one occurred
-                console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-                console.log('body:', body); // Print the HTML for the Google homepage.
-                res.json(body);
-            });
+        request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=' + thatone, function (error, response, body) {
+            console.log('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response.statusCode); // Print the response status code if a response was received
+            var newBody = JSON.parse(body);
+            res.json(newBody);
+        });
         });
     }); //ticketmaster close
 
