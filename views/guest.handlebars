@@ -14,7 +14,7 @@
                     </div>
                     <div id="collapse1" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <form id="MyForm" name="MyForm" method="post">
+                            <form id="MyForm" name="MyForm">
                                 <fieldset>
                                     <div id="panel">
                                         <p>What is your favorite sport?</p>
@@ -112,15 +112,38 @@
   </div>
 </div>
 
+
+
+            <form method="put" action="update">
+                <button id="putreq" class="btn btn-primary" type="button"  id="submitsurvey">Submit</button>
+            </form>
+
 <script>
     var choices = [];
-    $(function() {
-        $('input[type="radio"]').change(function() {
-            var surveyResult = this.value;
-            choices += surveyResult + ", ";
-            console.log(choices);
-        });
-    });
+    var email = localStorage.getItem("email");
+    var testing = "testing second params";
+
+    //    $("#submitsurvey").on("click", function () {
+    //        var q1;
+    //        var q2;
+    //        q1 = $(".q1").val().trim();
+    //        q2 = $(".q2").val().trim();
+    //
+    //        console.log(q1,q2);
+    //    });
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 
