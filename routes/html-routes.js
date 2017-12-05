@@ -13,10 +13,6 @@ module.exports = function(app) {
     res.render('index');
   });
 
-  // app.get("/eventsToAttend", function(req, res) {
-  //   res.render("eventsToAttend");
-  // });
-
   app.get("/host", function(req, res) {
     res.render("host");
   });
@@ -28,12 +24,4 @@ module.exports = function(app) {
   app.get("/contact", function(req, res) {
     res.render("contact");
   });
-  // // blog route loads blog.html
-  // app.get("/blog", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/blog.html"));
-  // });
-
-
-
-
 };

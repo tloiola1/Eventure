@@ -31,7 +31,7 @@ module.exports = function(app) {
         //     console.log(error);
         //   });
     });
-    // req.params.id
+
     app.delete("/api/delete/:id", function (req, res) {
         console.log(req);
 
@@ -68,15 +68,6 @@ module.exports = function(app) {
             });
     });
 
-
-    app.get("/api/events/all", function (req, res) {
-
-        db.events.findAll({})
-            .then(function (dbEvents) {
-                res.json(dbEvents);
-            });
-    });
-
     app.get("/api/users/all", function (req, res) {
 
         db.users.findAll({})
@@ -85,21 +76,18 @@ module.exports = function(app) {
             });
     });
 
-    app.post("/api/create/event", function (req, res) {
-        var userId = req.body.userId;
+    app.post("/api/contact", function (req, res) {
         var name = req.body.name;
-        var category = req.body.category;
-        var description = req.body.description;
+        var email = req.body.email;
+        var comment = req.body.comment;
 
-        db.events.create({
+        db.contacts.create({
             name,
-            category,
-            description,
-            userId
-        })
-            .then(function (dbEvents) {
-                console.log(dbEvents);
-            })
+            email,
+            comment
+        }).then(function (dbContacts) {
+            console.log(dbContacts);
+        });
     });
 
     app.get("/api/events/:category", function (req, res) {
@@ -114,43 +102,6 @@ module.exports = function(app) {
             res.json(dbEvents);
         });
     });
-
-    app.get("/manage", function (req, res) {
-        db.events.findAll({})
-            .then(function (dbEvents) {
-                res.render("manage", {events: dbEvents});
-            });
-        // console.log("##################################### User ID");
-        // console.log(req.params.id);
-        // db.events.findAll({
-        //   where:{
-        //     userId: req.params.id
-        //   }
-        // }).then(function(dbEvents) {
-        //   console.log(dbEvents);
-        //   res.render("manage", {events: dbEvents});
-        // });
-    });
-
-    // //  Authenticate
-    // app.post("/login",
-    //     passport.authenticate("local", { successRedirect: "/",
-    //         failureRedirect: "login",
-    //         failureFlash: true })
-    // );
-
-
-    // app.get('/findUser', function(req, res) {
-    //     console.log(req.user.email);
-    //     userEmail = req.user.email;
-    //     db.users.findOne({
-    //         where: {
-    //             email: userEmail
-    //         }
-    //     }).then(function (answer) {
-    //         console.log(answer.survey);
-    //     });
-    // });
 
     app.get('/ticketmaster/:survey', function (req, res) {
         var thatone;
