@@ -153,13 +153,18 @@ module.exports = function(app) {
 
     app.get('/ticketmaster/:survey', function (req, res) {
         var thatone;
+        var makeArray = new Array();
         db.users.findOne({
             where: {
                 email: req.params.survey
             }
         }).then(function (answer) {
             console.log("ANWERS FIRST: " + answer.survey);
+            //  convert string back to array
             thatone = answer.survey;
+            makeArray = thatone.split(",");
+            console.log("Array???", makeArray);
+
 
         request('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WfeuZCOCrGxOcUmDfuB6S0QApHBNvGKJ&city=atlanta&classificationName=' + thatone, function (error, response, body) {
             console.log('error:', error); // Print the error if one occurred
@@ -185,6 +190,7 @@ module.exports = function(app) {
         var userchoices = req.body;
         console.log(useremail);
         console.log("choice", userchoices);
+        console.log("choice", req.body.choices);
 
         db.users.update({
                 survey: req.body.choices
@@ -197,7 +203,7 @@ module.exports = function(app) {
             .then(function (result) {
                 // testing = testing
 
-                // res.redirect("/eventsToAttend");
+                res.redirect("/eventsToAttend");
 
                 // console.log("survey log", user.survey);
                 // console.log("email log", req.params.email);
