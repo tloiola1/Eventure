@@ -18,3 +18,5 @@ Technologies and npm packages used in this project:
 • MySQL Database
 • Git and GitHub for Version Control
 • Heroku to deploy the project.
+
+See this project live at https://socialtvt.herokuapp.com/
